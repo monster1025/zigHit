@@ -5812,12 +5812,6 @@
             <name>$PROJ_DIR$\..\Source\OSAL_SampleSw.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\Source\zcl_sampleapps_ui.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\Source\zcl_sampleapps_ui.h</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\Source\zcl_samplesw.c</name>
         </file>
         <file>

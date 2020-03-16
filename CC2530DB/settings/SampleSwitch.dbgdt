@@ -709,7 +709,7 @@
             <IarPane-34088>
                 <expressions>
                     <item>zclSampleSw_DstAddr</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

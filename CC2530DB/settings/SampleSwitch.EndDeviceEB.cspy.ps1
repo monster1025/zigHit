@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "C:\Texas Instruments\Z-Stack 3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.EndDeviceEB.general.xcl" --backend -f "C:\Texas Instruments\Z-Stack 3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.EndDeviceEB.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "C:\Texas Instruments\Z-Stack 3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\settings\SampleSwitch.EndDeviceEB.general.xcl" --backend -f "C:\Texas Instruments\Z-Stack 3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\settings\SampleSwitch.EndDeviceEB.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "C:\Texas Instruments\Z-Stack 3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.EndDeviceEB.general.xcl" --debug_file=$debugfile --backend -f "C:\Texas Instruments\Z-Stack 3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\settings\SampleSwitch.EndDeviceEB.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "C:\Texas Instruments\Z-Stack 3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\settings\SampleSwitch.EndDeviceEB.general.xcl" --debug_file=$debugfile --backend -f "C:\Texas Instruments\Z-Stack 3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\settings\SampleSwitch.EndDeviceEB.driver.xcl" 
 }
