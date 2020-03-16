@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR C/C++ Compiler V10.30.1.6000 for 8051               16/Mar/2020  12:48:30
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               16/Mar/2020  15:19:22
 # Copyright 2004-2018 IAR Systems AB.
 # Evaluation license - IAR Embedded Workbench for 8051, Evaluation edition 10.30
 #
@@ -15,30 +15,30 @@
 #        C:\Texas Instruments\Z-Stack
 #        3.0.1\Components\osal\common\OSAL_PwrMgr.c
 #    Command line       =  
-#        -f C:\Users\monster\AppData\Local\Temp\EWFEB3.tmp ("C:\Texas
+#        -f C:\Users\monster\AppData\Local\Temp\EW1C49.tmp ("C:\Texas
 #        Instruments\Z-Stack 3.0.1\Components\osal\common\OSAL_PwrMgr.c" -D
-#        NV_INIT -D NV_RESTORE -D TC_LINKKEY_JOIN -D ZBA_FALLBACK_NWKKEY -D
-#        POWER_SAVING -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D MT_APP_FUNC -D
-#        MT_SYS_FUNC -D MT_ZDO_FUNC -D MT_ZDO_MGMT -D xZCL_EZMODE -D
+#        NV_INIT -D xNV_RESTORE -D TC_LINKKEY_JOIN -D ZBA_FALLBACK_NWKKEY -D
+#        xPOWER_SAVING -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D MT_APP_FUNC
+#        -D MT_SYS_FUNC -D MT_ZDO_FUNC -D MT_ZDO_MGMT -D xZCL_EZMODE -D
 #        MT_APP_CNF_FUNC -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER
 #        -D ZCL_WRITE -D ZCL_REPORT -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_ON_OFF
 #        -D ZCL_GROUPS -D ZCL_DIAGNOSTIC -D FEATURE_SYSTEM_STATS -D
-#        HAL_KEY=FALSE -D HAL_LED=FALSE -D HAL_LCD=FALSE -D HAL_UART=FALSE -lC
-#        "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List"
+#        HAL_KEY=FALSE -D HAL_LED=FALSE -D HAL_LCD=FALSE -D HAL_UART=FALSE -D
+#        BDB_REPORTING -lC "C:\Texas Instruments\Z-Stack
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List"
 #        -lA "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List"
 #        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\Obj"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\Obj"
 #        -e --debug --core=plain --dptr=16,1 --data_model=large
 #        --code_model=banked --calling_convention=xdata_reentrant
 #        --place_constants=data_rom --nr_virtual_regs 16 -f "C:\Texas
 #        Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
 #        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
 #        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f "C:\Texas
 #        Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
 #        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
 #        -DDEFAULT_CHANLIST=MAX_CHANNELS_24GHZ -DZDAPP_CONFIG_PAN_ID=0xFFFF
 #        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
@@ -54,65 +54,65 @@
 #        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
 #        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
 #        -f "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\" -I
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\" -I "C:\Texas
+#        Instruments\Z-Stack
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\Source\" -I
 #        "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\Source\" -I
+#        "C:\Texas Instruments\Z-Stack
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\ZMain\TI2530DB\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\hal\include\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\include\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mt\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\osal\include\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\services\saddr\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\services\sdata\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\af\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\gp\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sec\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sys\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\zmac\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
-#        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\"
-#        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
 #        -Ohz --require_prototypes)
 #    Locale             =  Russian_RUS.1251
 #    List file          =  
 #        C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List\OSAL_PwrMgr.lst
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List\OSAL_PwrMgr.lst
 #    Object file        =  
 #        C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\Obj\OSAL_PwrMgr.r51
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\Obj\OSAL_PwrMgr.r51
 #
 ###############################################################################
 
@@ -454,67 +454,31 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\osal\common\OSAL_PwrMgr.c
     228           *
     229           * @return  none.
     230           */
-
-   \                                 In  segment BANKED_CODE, align 1, keep-with-next
     231          void osal_pwrmgr_powerconserve( void )
-   \                     osal_pwrmgr_powerconserve:
     232          {
-   \   000000                REQUIRE ?V0
-   \   000000                REQUIRE ?V1
-   \   000000                REQUIRE ?V2
-   \   000000                REQUIRE ?V3
-   \   000000   74F4         MOV       A,#-0xc
-   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
-   \   000005                ; Saved register size: 12
-   \   000005                ; Auto size: 0
     233            uint32        next;
     234            halIntState_t intState;
     235          
     236            // Should we even look into power conservation
     237            if ( pwrmgr_attribute.pwrmgr_device != PWRMGR_ALWAYS_ON )
-   \   000005   90....       MOV       DPTR,#pwrmgr_attribute + 6
-   \   000008   E0           MOVX      A,@DPTR
-   \   000009   601B         JZ        ??osal_pwrmgr_powerconserve_0
     238            {
     239              // Are all tasks in agreement to conserve
     240              if ( pwrmgr_attribute.pwrmgr_task_state == 0 )
-   \   00000B   90....       MOV       DPTR,#pwrmgr_attribute
-   \   00000E   E0           MOVX      A,@DPTR
-   \   00000F   F8           MOV       R0,A
-   \   000010   A3           INC       DPTR
-   \   000011   E0           MOVX      A,@DPTR
-   \   000012   F9           MOV       R1,A
-   \   000013   E8           MOV       A,R0
-   \   000014   49           ORL       A,R1
-   \   000015   700F         JNZ       ??osal_pwrmgr_powerconserve_0
     241              {
     242                // Hold off interrupts.
     243                HAL_ENTER_CRITICAL_SECTION( intState );
-   \   000017   AEA8         MOV       R6,0xa8+0x0
-   \   000019   C2AF         CLR       0xa8.7
     244          
     245                // Get next time-out
     246                next = osal_next_timeout();
-   \   00001B                ; Setup parameters for call to function osal_next_timeout
-   \   00001B   12....       LCALL     `??osal_next_timeout::?relay`; Banked call to: osal_next_timeout
     247          
     248                // Re-enable interrupts.
     249                HAL_EXIT_CRITICAL_SECTION( intState );
-   \   00001E   EE           MOV       A,R6
-   \   00001F   A2E7         MOV       C,0xE0 /* A   */.7
-   \   000021   92AF         MOV       0xa8.7,C
     250          
     251                // Put the processor into sleep mode
     252                OSAL_SET_CPU_INTO_SLEEP( next );
-   \   000023                ; Setup parameters for call to function halSleep
-   \   000023   12....       LCALL     `??halSleep::?relay`; Banked call to: halSleep
     253              }
     254            }
     255          }
-   \                     ??osal_pwrmgr_powerconserve_0:
-   \   000026   7F04         MOV       R7,#0x4
-   \   000028   02....       LJMP      ?BANKED_LEAVE_XDATA
-   \   00002B                REQUIRE _A_IEN0
     256          #endif /* POWER_SAVING */
     257          
     258          /*********************************************************************
@@ -526,9 +490,6 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\osal\common\OSAL_PwrMgr.c
    ------ ------ --------
       2      0   osal_pwrmgr_device
       2      0   osal_pwrmgr_init
-      0     12   osal_pwrmgr_powerconserve
-        0     12   -> halSleep
-        0     12   -> osal_next_timeout
       0     10   osal_pwrmgr_task_state
 
 
@@ -540,20 +501,19 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\osal\common\OSAL_PwrMgr.c
        1  _A_IEN0
       10  osal_pwrmgr_device
       14  osal_pwrmgr_init
-      43  osal_pwrmgr_powerconserve
       84  osal_pwrmgr_task_state
        7  pwrmgr_attribute
-      24  -- Other
+      18  -- Other
 
  
- 159 bytes in segment BANKED_CODE
-  24 bytes in segment BANK_RELAYS
+ 116 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
    1 byte  in segment SFR_AN
    7 bytes in segment XDATA_Z
  
-  24 bytes of CODE     memory
+  18 bytes of CODE     memory
    0 bytes of DATA     memory (+ 1 byte shared)
- 159 bytes of HUGECODE memory
+ 116 bytes of HUGECODE memory
    7 bytes of XDATA    memory
 
 Errors: none

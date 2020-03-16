@@ -66,6 +66,7 @@
 /*********************************************************************
  * INCLUDES
  */
+#include "zcl.h"
 #include "ZComDef.h"
 #include "OSAL.h"
 #include "AF.h"
@@ -118,6 +119,10 @@ uint8 zclZigItSeqNum;
 uint8 zclZigIt_OnOffSwitchType = ON_OFF_SWITCH_TYPE_MOMENTARY;
 
 uint8 zclZigIt_OnOffSwitchActions;
+uint16 zclZigUPSeqNum=0;
+volatile uint8 STATE_LIGHT=0;
+
+#define REPORT_REASON_TIMER     0
 
 /*********************************************************************
  * GLOBAL FUNCTIONS
@@ -146,7 +151,7 @@ devStates_t zclZigIt_NwkState = DEV_INIT;
 #define DEVICE_POLL_RATE                 8000   // Poll rate for end device
 #endif
 
-#define SAMPLESW_TOGGLE_TEST_EVT   0x1000
+#define ZIGIT_REPORTING_EVT 0x1000
 /*********************************************************************
  * LOCAL FUNCTIONS
  */
@@ -191,15 +196,6 @@ static void zclZigIt_ProcessOTAMsgs( zclOTA_CallbackMsg_t* pMsg );
 
 void zclZigIt_UiActionToggleLight(uint16 keys);
 void zclZigIt_UiUpdateLcd(uint8 uiCurrentState, char * line[3]);
-
-/*********************************************************************
- * CONSTANTS
- */
-  const uiState_t zclZigIt_UiStatesMain[] = 
-  {
-    /*  UI_STATE_BACK_FROM_APP_MENU  */   {UI_STATE_DEFAULT_MOVE,       UI_STATE_TOGGLE_LIGHT,  UI_KEY_SW_5_PRESSED, &UI_ActionBackFromAppMenu}, //do not change this line, except for the second item, which should point to the last entry in this menu
-    /*  UI_STATE_TOGGLE_LIGHT        */   {UI_STATE_BACK_FROM_APP_MENU, UI_STATE_DEFAULT_MOVE,  UI_KEY_SW_5_PRESSED | UI_KEY_SW_5_RELEASED, &zclZigIt_UiActionToggleLight},
-  };
   
 /*********************************************************************
  * REFERENCED EXTERNALS
@@ -304,10 +300,11 @@ void zclZigIt_Init( byte task_id )
   //UI_Init(zclZigIt_TaskID, SAMPLEAPP_LCD_AUTO_UPDATE_EVT, SAMPLEAPP_KEY_AUTO_REPEAT_EVT, &zclZigIt_IdentifyTime, APP_TITLE, &zclZigIt_UiUpdateLcd, zclZigIt_UiStatesMain);
 
   //UI_UpdateLcd();
-  osal_start_timerEx(zclZigIt_TaskID,SAMPLESW_TOGGLE_TEST_EVT,5000);
+  osal_start_timerEx(zclZigIt_TaskID,ZIGIT_REPORTING_EVT,5000);
   
-  //bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING);
-    bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING);
+  //bdb_StartCommissioning(BDB_COMMISSIONING_REJOIN_EXISTING_NETWORK_ON_STARTUP);
+  bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING);
+    //bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING);
     // Initiate an End Device Bind Request, this bind request will
     // only use a cluster list that is important to binding.
 
@@ -322,6 +319,46 @@ void zclZigIt_Init( byte task_id )
 //                           TRUE );
 
 }
+
+void zclZigIt_Reporting(uint16 REPORT_REASON)
+{
+  const uint8 NUM_ATTRIBUTES = 2;
+  
+  // send report
+  zclReportCmd_t *pReportCmd;
+  
+  pReportCmd = osal_mem_alloc( sizeof(zclReportCmd_t) + ( NUM_ATTRIBUTES * sizeof(zclReport_t) ) );
+  if ( pReportCmd != NULL )
+  {
+    if (STATE_LIGHT) {
+      STATE_LIGHT=false;
+    }else {
+      STATE_LIGHT=true;
+    }
+    uint8 TEST = STATE_LIGHT;
+    
+    pReportCmd->numAttr = NUM_ATTRIBUTES;
+    
+    pReportCmd->attrList[0].attrID = ATTRID_ON_OFF;
+    pReportCmd->attrList[0].dataType = ZCL_DATATYPE_BOOLEAN;
+    pReportCmd->attrList[0].attrData = (void *)(&TEST);
+
+    pReportCmd->attrList[1].attrID = ATTRID_ON_OFF;
+    pReportCmd->attrList[1].dataType = ZCL_DATATYPE_BOOLEAN;
+    pReportCmd->attrList[1].attrData = (void *)(&TEST);
+    
+    
+    zclZigIt_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+    zclZigIt_DstAddr.addr.shortAddr = 0;
+    zclZigIt_DstAddr.endPoint=1;
+    
+    zcl_SendReportCmd( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, ZCL_CLUSTER_ID_GEN_ON_OFF, pReportCmd, ZCL_FRAME_CLIENT_SERVER_DIR, false, zclZigUPSeqNum++ );
+  }
+  
+  osal_mem_free( pReportCmd );
+}
+
+
 
 /*********************************************************************
  * @fn          zclSample_event_loop
@@ -338,18 +375,26 @@ uint16 zclZigIt_event_loop( uint8 task_id, uint16 events )
   (void)task_id;  // Intentionally unreferenced parameter
 
   //Send toggle every 500ms
-  if( events & SAMPLESW_TOGGLE_TEST_EVT )
+//  if( events & SAMPLESW_TOGGLE_TEST_EVT )
+//  {
+//    osal_start_timerEx(zclZigIt_TaskID,SAMPLESW_TOGGLE_TEST_EVT,5000);
+//    //zclGeneral_SendOnOff_CmdToggle( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+//    zclGeneral_SendOnOff_CmdOn( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+//    
+//    zclGeneral_SendOnOff_CmdOff( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+//   
+//    // return unprocessed events
+//    return (events ^ SAMPLESW_TOGGLE_TEST_EVT);
+//  }
+//  
+  if ( events & ZIGIT_REPORTING_EVT )
   {
-    osal_start_timerEx(zclZigIt_TaskID,SAMPLESW_TOGGLE_TEST_EVT,5000);
-    //zclGeneral_SendOnOff_CmdToggle( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, 0 );
-    zclGeneral_SendOnOff_CmdOn( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+    // report states
+    zclZigIt_Reporting(REPORT_REASON_TIMER);
+    osal_start_timerEx(zclZigIt_TaskID,ZIGIT_REPORTING_EVT,5000);
     
-    zclGeneral_SendOnOff_CmdOff( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, bdb_getZCLFrameCounter() );
-   
-    // return unprocessed events
-    return (events ^ SAMPLESW_TOGGLE_TEST_EVT);
-  }
-  
+    return ( events ^ ZIGIT_REPORTING_EVT );
+  }      
   
   if ( events & SYS_EVENT_MSG )
   {

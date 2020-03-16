@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <settings>
     <DebugChecksum>
-        <Checksum>3419263945</Checksum>
+        <Checksum>4235167554</Checksum>
     </DebugChecksum>
     <Stack>
         <FillEnabled>0</FillEnabled>
@@ -33,11 +33,12 @@
         <Category>_ 0</Category>
     </LogFile>
     <Breakpoints>
-        <Bp0>_ "STD_CODE" "{$PROJ_DIR$\..\Source\zcl_samplesw.c}.511.3" 0 0 0 0 "" 0 ""</Bp0>
-        <Bp1>_ "STD_CODE" "{C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\zdo\ZDApp.c}.407.3" 0 0 0 0 "" 0 ""</Bp1>
-        <Bp2>_ "STD_CODE" "{C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\zdo}.308.3" 0 0 0 0 "" 0 ""</Bp2>
-        <Bp3>_ "STD_CODE" "{C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\zdo}.310.5" 0 0 0 0 "" 0 ""</Bp3>
-        <Count>4</Count>
+        <Bp0>_ "STD_CODE" "{C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\zdo\ZDApp.c}.407.3" 0 0 0 0 "" 0 ""</Bp0>
+        <Bp1>_ "STD_CODE" "{C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\zdo}.308.3" 0 0 0 0 "" 0 ""</Bp1>
+        <Bp2>_ "STD_CODE" "{C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\zdo}.310.5" 0 0 0 0 "" 0 ""</Bp2>
+        <Bp3>_ "STD_CODE" "{C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\zdo}.522.9" 0 0 0 0 "" 0 ""</Bp3>
+        <Bp4>_ "STD_CODE" "{$PROJ_DIR$\..\Source\zcl_samplesw.c}.321.1" 1 0 0 0 "" 0 ""</Bp4>
+        <Count>5</Count>
     </Breakpoints>
     <ChipconEmu>
         <StopTimersOnHalt>0</StopTimersOnHalt>

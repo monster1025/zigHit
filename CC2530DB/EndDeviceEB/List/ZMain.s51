@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-// IAR C/C++ Compiler V10.30.1.6000 for 8051              16/Mar/2020  12:48:33
+// IAR C/C++ Compiler V10.30.1.6000 for 8051              16/Mar/2020  15:19:24
 // Copyright 2004-2018 IAR Systems AB.
 // Evaluation license - IAR Embedded Workbench for 8051, Evaluation edition 10.30
 //
@@ -15,30 +15,30 @@
 //        C:\Texas Instruments\Z-Stack
 //        3.0.1\Projects\zstack\ZMain\TI2530DB\ZMain.c
 //    Command line       =  
-//        -f C:\Users\monster\AppData\Local\Temp\EW86F.tmp ("C:\Texas
+//        -f C:\Users\monster\AppData\Local\Temp\EW2604.tmp ("C:\Texas
 //        Instruments\Z-Stack 3.0.1\Projects\zstack\ZMain\TI2530DB\ZMain.c" -D
-//        NV_INIT -D NV_RESTORE -D TC_LINKKEY_JOIN -D ZBA_FALLBACK_NWKKEY -D
-//        POWER_SAVING -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D MT_APP_FUNC
+//        NV_INIT -D xNV_RESTORE -D TC_LINKKEY_JOIN -D ZBA_FALLBACK_NWKKEY -D
+//        xPOWER_SAVING -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D MT_APP_FUNC
 //        -D MT_SYS_FUNC -D MT_ZDO_FUNC -D MT_ZDO_MGMT -D xZCL_EZMODE -D
 //        MT_APP_CNF_FUNC -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
 //        ZCL_DISCOVER -D ZCL_WRITE -D ZCL_REPORT -D ZCL_BASIC -D ZCL_IDENTIFY
 //        -D ZCL_ON_OFF -D ZCL_GROUPS -D ZCL_DIAGNOSTIC -D FEATURE_SYSTEM_STATS
 //        -D HAL_KEY=FALSE -D HAL_LED=FALSE -D HAL_LCD=FALSE -D HAL_UART=FALSE
-//        -lC "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List"
+//        -D BDB_REPORTING -lC "C:\Texas Instruments\Z-Stack
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List"
 //        -lA "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List"
 //        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\Obj"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\Obj"
 //        -e --debug --core=plain --dptr=16,1 --data_model=large
 //        --code_model=banked --calling_convention=xdata_reentrant
 //        --place_constants=data_rom --nr_virtual_regs 16 -f "C:\Texas
 //        Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
 //        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
 //        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f "C:\Texas
 //        Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
 //        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
 //        -DDEFAULT_CHANLIST=MAX_CHANNELS_24GHZ -DZDAPP_CONFIG_PAN_ID=0xFFFF
 //        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
@@ -54,62 +54,62 @@
 //        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
 //        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000
 //        -DENABLE_LED4_DISABLE_S1) -f "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\" -I
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\" -I "C:\Texas
+//        Instruments\Z-Stack
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\Source\" -I
 //        "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\Source\" -I
+//        "C:\Texas Instruments\Z-Stack
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\ZMain\TI2530DB\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\hal\include\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\include\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mt\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\osal\include\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\services\saddr\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\services\sdata\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\af\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\gp\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sec\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sys\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\zmac\"
 //        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
-//        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\"
-//        -I "C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
 //        -Ohz --require_prototypes)
 //    Locale             =  Russian_RUS.1251
 //    List file          =  
 //        C:\Texas Instruments\Z-Stack
-//        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List\ZMain.s51
+//        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List\ZMain.s51
 //
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -1140,17 +1140,6 @@ zmain_ext_addr:
         ARGFRAME XSTACK, 29, STACK
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
-        FUNCALL zmain_ext_addr, osal_rand
-        LOCFRAME ISTACK, 0, STACK
-        LOCFRAME PSTACK, 0, STACK
-        LOCFRAME XSTACK, 26, STACK
-        LOCFRAME IOVERLAY, 0, STATIC
-        LOCFRAME DOVERLAY, 0, STATIC
-        ARGFRAME ISTACK, 0, STACK
-        ARGFRAME PSTACK, 0, STACK
-        ARGFRAME XSTACK, 26, STACK
-        ARGFRAME IOVERLAY, 0, STATIC
-        ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zmain_ext_addr, osal_nv_write
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
@@ -1163,6 +1152,17 @@ zmain_ext_addr:
         ARGFRAME IOVERLAY, 0, STATIC
         ARGFRAME DOVERLAY, 0, STATIC
         FUNCALL zmain_ext_addr, ZMacSetReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 26, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 26, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zmain_ext_addr, osal_rand
         LOCFRAME ISTACK, 0, STACK
         LOCFRAME PSTACK, 0, STACK
         LOCFRAME XSTACK, 26, STACK
@@ -1351,7 +1351,6 @@ zmain_ext_addr:
         MOV       A,#0x3
         LCALL     ?DEALLOC_XSTACK8
           CFI CFA_XSP16 add(XSP16, 26)
-        SJMP      ??zmain_ext_addr_2
 //  196       }
 //  197       else  // No valid extended address was found.
 //  198       {
@@ -1366,39 +1365,11 @@ zmain_ext_addr:
 //  207          *       must never be used for a commercial product.
 //  208          */
 //  209         for (idx = 0; idx < (Z_EXTADDR_LEN - 2);)
-??zmain_ext_addr_3:
-        MOV       R6,#0x0
 //  210         {
 //  211           uint16 randy = osal_rand();
-??zmain_ext_addr_4:
-        ; Setup parameters for call to function osal_rand
-        LCALL     `??osal_rand::?relay`; Banked call to: osal_rand
-        MOV       ?V0,R2
 //  212           aExtendedAddress[idx++] = LO_UINT16(randy);
-        MOV       A,R6
-        MOV       R2,A
-        MOV       A,#aExtendedAddress & 0xff
-        ADD       A,R2
-        MOV       DPL,A
-        CLR       A
-        ADDC      A,#(aExtendedAddress >> 8) & 0xff
-        MOV       DPH,A
-        MOV       A,?V0
-        MOVX      @DPTR,A
-        INC       R6
 //  213           aExtendedAddress[idx++] = HI_UINT16(randy);
-        MOV       A,R6
-        MOV       R0,A
-        LCALL     ?Subroutine0 & 0xFFFF
 //  214         }
-??CrossCallReturnLabel_0:
-        MOV       A,R3
-        MOVX      @DPTR,A
-        INC       R6
-        MOV       A,R6
-        CLR       C
-        SUBB      A,#0x6
-        JC        ??zmain_ext_addr_4
 //  215         // Next-to-MSB identifies ZigBee devicetype.
 //  216 #if ZG_BUILD_COORDINATOR_TYPE && !ZG_BUILD_JOINING_TYPE
 //  217         aExtendedAddress[idx++] = 0x10;
@@ -1406,23 +1377,9 @@ zmain_ext_addr:
 //  219         aExtendedAddress[idx++] = 0x20;
 //  220 #else
 //  221         aExtendedAddress[idx++] = 0x30;
-        INC       R0
-        LCALL     ?Subroutine0 & 0xFFFF
-??CrossCallReturnLabel_1:
-        MOV       A,#0x30
-        MOVX      @DPTR,A
 //  222 #endif
 //  223         // MSB has historical signficance.
 //  224         aExtendedAddress[idx] = 0xF8;
-        INC       R0
-        MOV       A,#aExtendedAddress & 0xff
-        ADD       A,R0
-        MOV       DPL,A
-        CLR       A
-        ADDC      A,#(aExtendedAddress >> 8) & 0xff
-        MOV       DPH,A
-        MOV       A,#-0x8
-        MOVX      @DPTR,A
 //  225       }
 //  226     }
 //  227 
@@ -1466,6 +1423,50 @@ zmain_ext_addr:
           CFI CFA_XSP16 add(XSP16, 18)
         MOV       R7,#0xa
         LJMP      ?BANKED_LEAVE_XDATA
+          CFI CFA_XSP16 add(XSP16, 26)
+??zmain_ext_addr_3:
+        MOV       R6,#0x0
+??zmain_ext_addr_4:
+        ; Setup parameters for call to function osal_rand
+        LCALL     `??osal_rand::?relay`; Banked call to: osal_rand
+        MOV       ?V0,R2
+        MOV       A,R6
+        MOV       R2,A
+        MOV       A,#aExtendedAddress & 0xff
+        ADD       A,R2
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,#(aExtendedAddress >> 8) & 0xff
+        MOV       DPH,A
+        MOV       A,?V0
+        MOVX      @DPTR,A
+        INC       R6
+        MOV       A,R6
+        MOV       R0,A
+        LCALL     ?Subroutine0 & 0xFFFF
+??CrossCallReturnLabel_0:
+        MOV       A,R3
+        MOVX      @DPTR,A
+        INC       R6
+        MOV       A,R6
+        CLR       C
+        SUBB      A,#0x6
+        JC        ??zmain_ext_addr_4
+        INC       R0
+        LCALL     ?Subroutine0 & 0xFFFF
+??CrossCallReturnLabel_1:
+        MOV       A,#0x30
+        MOVX      @DPTR,A
+        INC       R0
+        MOV       A,#aExtendedAddress & 0xff
+        ADD       A,R0
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,#(aExtendedAddress >> 8) & 0xff
+        MOV       DPH,A
+        MOV       A,#-0x8
+        MOVX      @DPTR,A
+        SJMP      ??zmain_ext_addr_1
           CFI EndBlock cfiBlock1
 
         RSEG BANKED_CODE:HUGECODE:NOROOT(0)

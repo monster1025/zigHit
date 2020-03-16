@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR C/C++ Compiler V10.30.1.6000 for 8051               16/Mar/2020  12:48:32
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               16/Mar/2020  15:19:24
 # Copyright 2004-2018 IAR Systems AB.
 # Evaluation license - IAR Embedded Workbench for 8051, Evaluation edition 10.30
 #
@@ -14,30 +14,30 @@
 #    Source file        =  
 #        C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
 #    Command line       =  
-#        -f C:\Users\monster\AppData\Local\Temp\EW6A7.tmp ("C:\Texas
+#        -f C:\Users\monster\AppData\Local\Temp\EW2516.tmp ("C:\Texas
 #        Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c" -D NV_INIT
-#        -D NV_RESTORE -D TC_LINKKEY_JOIN -D ZBA_FALLBACK_NWKKEY -D
-#        POWER_SAVING -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D MT_APP_FUNC -D
-#        MT_SYS_FUNC -D MT_ZDO_FUNC -D MT_ZDO_MGMT -D xZCL_EZMODE -D
+#        -D xNV_RESTORE -D TC_LINKKEY_JOIN -D ZBA_FALLBACK_NWKKEY -D
+#        xPOWER_SAVING -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D MT_APP_FUNC
+#        -D MT_SYS_FUNC -D MT_ZDO_FUNC -D MT_ZDO_MGMT -D xZCL_EZMODE -D
 #        MT_APP_CNF_FUNC -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER
 #        -D ZCL_WRITE -D ZCL_REPORT -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_ON_OFF
 #        -D ZCL_GROUPS -D ZCL_DIAGNOSTIC -D FEATURE_SYSTEM_STATS -D
-#        HAL_KEY=FALSE -D HAL_LED=FALSE -D HAL_LCD=FALSE -D HAL_UART=FALSE -lC
-#        "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List"
+#        HAL_KEY=FALSE -D HAL_LED=FALSE -D HAL_LCD=FALSE -D HAL_UART=FALSE -D
+#        BDB_REPORTING -lC "C:\Texas Instruments\Z-Stack
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List"
 #        -lA "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List"
 #        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\Obj"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\Obj"
 #        -e --debug --core=plain --dptr=16,1 --data_model=large
 #        --code_model=banked --calling_convention=xdata_reentrant
 #        --place_constants=data_rom --nr_virtual_regs 16 -f "C:\Texas
 #        Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
 #        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
 #        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f "C:\Texas
 #        Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
 #        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
 #        -DDEFAULT_CHANLIST=MAX_CHANNELS_24GHZ -DZDAPP_CONFIG_PAN_ID=0xFFFF
 #        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
@@ -53,65 +53,65 @@
 #        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
 #        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
 #        -f "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\" -I
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\" -I "C:\Texas
+#        Instruments\Z-Stack
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\Source\" -I
 #        "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\Source\" -I
+#        "C:\Texas Instruments\Z-Stack
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\ZMain\TI2530DB\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\hal\include\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\include\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mt\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\osal\include\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\services\saddr\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\services\sdata\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\af\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\gp\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sec\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sys\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\zmac\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
-#        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\"
-#        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
 #        -Ohz --require_prototypes)
 #    Locale             =  Russian_RUS.1251
 #    List file          =  
 #        C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List\ZGlobals.lst
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List\ZGlobals.lst
 #    Object file        =  
 #        C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\Obj\ZGlobals.r51
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\Obj\ZGlobals.r51
 #
 ###############################################################################
 
@@ -1226,30 +1226,20 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
     584          {
    \   000000                REQUIRE ?V0
    \   000000                REQUIRE ?V1
-   \   000000                REQUIRE ?V2
-   \   000000                REQUIRE ?V3
-   \   000000   74F4         MOV       A,#-0xc
+   \   000000   74F6         MOV       A,#-0xa
    \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
-   \   000005                ; Saved register size: 12
+   \   000005                ; Saved register size: 10
    \   000005                ; Auto size: 18
    \   000005   74EE         MOV       A,#-0x12
    \   000007   12....       LCALL     ?ALLOC_XSTACK8
     585            uint8  setDefault = FALSE;
-   \   00000A   7E00         MOV       R6,#0x0
     586            uint8  status;
     587            
     588          #ifdef NV_RESTORE
     589            // Do we want to default the Config state values
     590            if ( zgReadStartupOptions() & ZCD_STARTOPT_DEFAULT_CONFIG_STATE )
-   \   00000C                ; Setup parameters for call to function zgReadStartupOptions
-   \   00000C   12....       LCALL     `??zgReadStartupOptions::?relay`; Banked call to: zgReadStartupOptions
-   \   00000F   E9           MOV       A,R1
-   \   000010   F8           MOV       R0,A
-   \   000011   A2E0         MOV       C,0xE0 /* A   */.0
-   \   000013   5002         JNC       ??zgInit_0
     591            {
     592              setDefault = TRUE;
-   \   000015   7E01         MOV       R6,#0x1
     593            }
     594          #else
     595              setDefault = TRUE;
@@ -1259,287 +1249,251 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
     599          
     600            //Force to reset state if device is forced to FN
     601            if((status == SUCCESS) && setDefault)
-   \                     ??zgInit_0:
-   \   000017                ; Setup parameters for call to function osal_nv_item_init
-   \   000017   75....       MOV       ?V0,#(bdbAttributes + 14) & 0xff
-   \   00001A   75....       MOV       ?V1,#((bdbAttributes + 14) >> 8) & 0xff
-   \   00001D   78..         MOV       R0,#?V0
-   \   00001F   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000022   7C01         MOV       R4,#0x1
-   \   000024   7D00         MOV       R5,#0x0
-   \   000026   7A55         MOV       R2,#0x55
-   \   000028   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \   00000A                ; Setup parameters for call to function osal_nv_item_init
+   \   00000A   75....       MOV       ?V0,#(bdbAttributes + 14) & 0xff
+   \   00000D   75....       MOV       ?V1,#((bdbAttributes + 14) >> 8) & 0xff
+   \   000010   78..         MOV       R0,#?V0
+   \   000012   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000015   7C01         MOV       R4,#0x1
+   \   000017   7D00         MOV       R5,#0x0
+   \   000019   7A55         MOV       R2,#0x55
+   \   00001B   12....       LCALL     ?Subroutine2 & 0xFFFF
    \                     ??CrossCallReturnLabel_0:
-   \   00002B   12....       LCALL     ?DEALLOC_XSTACK8
-   \   00002E   E9           MOV       A,R1
-   \   00002F   700A         JNZ       ??zgInit_1
-   \   000031   EE           MOV       A,R6
-   \   000032   A2E0         MOV       C,0xE0 /* A   */.0
-   \   000034   5005         JNC       ??zgInit_1
+   \   00001E   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000021   E9           MOV       A,R1
+   \   000022   7005         JNZ       ??zgInit_0
     602            {
     603              bdb_setNodeIsOnANetwork(false);
-   \   000036                ; Setup parameters for call to function bdb_setNodeIsOnANetwork
-   \   000036   7900         MOV       R1,#0x0
-   \   000038   12....       LCALL     `??bdb_setNodeIsOnANetwork::?relay`; Banked call to: bdb_setNodeIsOnANetwork
+   \   000024                ; Setup parameters for call to function bdb_setNodeIsOnANetwork
+   \   000024   7900         MOV       R1,#0x0
+   \   000026   12....       LCALL     `??bdb_setNodeIsOnANetwork::?relay`; Banked call to: bdb_setNodeIsOnANetwork
     604            }
     605            
     606          #if defined (FEATURE_SYSTEM_STATS) 
     607            {
     608              // This sections tracks the number of resets
     609              uint16 bootCnt = 0;
-   \                     ??zgInit_1:
-   \   00003B   85..82       MOV       DPL,?XSP + 0
-   \   00003E   85..83       MOV       DPH,?XSP + 1
-   \   000041   E4           CLR       A
-   \   000042   F0           MOVX      @DPTR,A
-   \   000043   A3           INC       DPTR
-   \   000044   12....       LCALL     ??Subroutine6_0 & 0xFFFF
+   \                     ??zgInit_0:
+   \   000029   12....       LCALL     ?Subroutine1 & 0xFFFF
     610          
     611              // Update the Boot Counter
     612              if ( osal_nv_item_init( ZCD_NV_BOOTCOUNTER, sizeof(bootCnt), &bootCnt ) == ZSUCCESS )
-   \                     ??CrossCallReturnLabel_12:
-   \   000047   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   00004A   7C02         MOV       R4,#0x2
-   \   00004C   7D00         MOV       R5,#0x0
-   \   00004E   7A02         MOV       R2,#0x2
-   \   000050   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   00002C   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00002F   7C02         MOV       R4,#0x2
+   \   000031   7D00         MOV       R5,#0x0
+   \   000033   7A02         MOV       R2,#0x2
+   \   000035   12....       LCALL     ?Subroutine2 & 0xFFFF
    \                     ??CrossCallReturnLabel_1:
-   \   000053   12....       LCALL     ?DEALLOC_XSTACK8
-   \   000056   E9           MOV       A,R1
-   \   000057   701C         JNZ       ??zgInit_2
+   \   000038   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00003B   E9           MOV       A,R1
+   \   00003C   701C         JNZ       ??zgInit_1
     613              {
     614                // Get the old value from NV memory
     615                osal_nv_read( ZCD_NV_BOOTCOUNTER, 0, sizeof(bootCnt), &bootCnt );
-   \   000059                ; Setup parameters for call to function osal_nv_read
-   \   000059   78..         MOV       R0,#?V0
-   \   00005B   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   00005E   75..02       MOV       ?V0,#0x2
-   \   000061   75..00       MOV       ?V1,#0x0
-   \   000064   78..         MOV       R0,#?V0
-   \   000066   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000069   7C00         MOV       R4,#0x0
-   \   00006B   7D00         MOV       R5,#0x0
-   \   00006D   7A02         MOV       R2,#0x2
-   \   00006F   12....       LCALL     ??Subroutine5_0 & 0xFFFF
+   \   00003E                ; Setup parameters for call to function osal_nv_read
+   \   00003E   78..         MOV       R0,#?V0
+   \   000040   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000043   75..02       MOV       ?V0,#0x2
+   \   000046   75..00       MOV       ?V1,#0x0
+   \   000049   78..         MOV       R0,#?V0
+   \   00004B   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00004E   7C00         MOV       R4,#0x0
+   \   000050   7D00         MOV       R5,#0x0
+   \   000052   7A02         MOV       R2,#0x2
+   \   000054   12....       LCALL     ??Subroutine6_0 & 0xFFFF
     616              }
    \                     ??CrossCallReturnLabel_8:
-   \   000072   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000057   12....       LCALL     ?DEALLOC_XSTACK8
     617          
     618              // Increment the Boot Counter and store it into NV memory
     619              if ( setDefault )
-   \                     ??zgInit_2:
-   \   000075   EE           MOV       A,R6
-   \   000076   A2E0         MOV       C,0xE0 /* A   */.0
-   \   000078   85..82       MOV       DPL,?XSP + 0
-   \   00007B   85..83       MOV       DPH,?XSP + 1
-   \   00007E   5005         JNC       ??zgInit_3
     620              {
     621                bootCnt = 0;
-   \   000080   E4           CLR       A
-   \   000081   F0           MOVX      @DPTR,A
-   \   000082   A3           INC       DPTR
-   \   000083   8008         SJMP      ??zgInit_4
+   \                     ??zgInit_1:
+   \   00005A   12....       LCALL     ?Subroutine1 & 0xFFFF
     622              }
     623              else
     624              {
     625                bootCnt++;
-   \                     ??zgInit_3:
-   \   000085   E0           MOVX      A,@DPTR
-   \   000086   2401         ADD       A,#0x1
-   \   000088   F0           MOVX      @DPTR,A
-   \   000089   A3           INC       DPTR
-   \   00008A   E0           MOVX      A,@DPTR
-   \   00008B   3400         ADDC      A,#0x0
     626              }
     627          
     628              osal_nv_write( ZCD_NV_BOOTCOUNTER, 0, sizeof(bootCnt), &bootCnt );
     629            }
-   \                     ??zgInit_4:
-   \   00008D   12....       LCALL     ??Subroutine6_0 & 0xFFFF
-   \                     ??CrossCallReturnLabel_13:
-   \   000090   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000093   75..02       MOV       ?V0,#0x2
-   \   000096   75..00       MOV       ?V1,#0x0
-   \   000099   78..         MOV       R0,#?V0
-   \   00009B   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   00009E   7C00         MOV       R4,#0x0
-   \   0000A0   7D00         MOV       R5,#0x0
-   \   0000A2   7A02         MOV       R2,#0x2
-   \   0000A4   7B00         MOV       R3,#0x0
-   \   0000A6   12....       LCALL     `??osal_nv_write::?relay`; Banked call to: osal_nv_write
-   \   0000A9   7404         MOV       A,#0x4
-   \   0000AB   12....       LCALL     ?DEALLOC_XSTACK8
+   \                     ??CrossCallReturnLabel_11:
+   \   00005D   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000060   75..02       MOV       ?V0,#0x2
+   \   000063   75..00       MOV       ?V1,#0x0
+   \   000066   78..         MOV       R0,#?V0
+   \   000068   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00006B   7C00         MOV       R4,#0x0
+   \   00006D   7D00         MOV       R5,#0x0
+   \   00006F   7A02         MOV       R2,#0x2
+   \   000071   7B00         MOV       R3,#0x0
+   \   000073   12....       LCALL     `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+   \   000076   7404         MOV       A,#0x4
+   \   000078   12....       LCALL     ?DEALLOC_XSTACK8
     630          #endif  // FEATURE_SYSTEM_STATS
     631          
     632            zgUpgradeNVItems();
-   \   0000AE                ; Setup parameters for call to function osal_nv_item_len
-   \   0000AE   7A24         MOV       R2,#0x24
-   \   0000B0   7B00         MOV       R3,#0x0
-   \   0000B2   12....       LCALL     `??osal_nv_item_len::?relay`; Banked call to: osal_nv_item_len
-   \   0000B5   8A..         MOV       ?V0,R2
-   \   0000B7   8B..         MOV       ?V1,R3
-   \   0000B9                ; Setup parameters for call to function osal_nv_item_len
-   \   0000B9   7A35         MOV       R2,#0x35
-   \   0000BB   7B00         MOV       R3,#0x0
-   \   0000BD   12....       LCALL     `??osal_nv_item_len::?relay`; Banked call to: osal_nv_item_len
-   \   0000C0   EA           MOV       A,R2
-   \   0000C1   4B           ORL       A,R3
-   \   0000C2   7066         JNZ       ??zgInit_5
-   \   0000C4   7402         MOV       A,#0x2
-   \   0000C6   65..         XRL       A,?V0
-   \   0000C8   45..         ORL       A,?V1
-   \   0000CA   705E         JNZ       ??zgInit_5
-   \   0000CC                ; Setup parameters for call to function osal_nv_read
-   \   0000CC   A8..         MOV       R0,?XSP + 0
-   \   0000CE   A9..         MOV       R1,?XSP + 1
-   \   0000D0   88..         MOV       ?V0,R0
-   \   0000D2   89..         MOV       ?V1,R1
-   \   0000D4   78..         MOV       R0,#?V0
-   \   0000D6   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   0000D9   75..02       MOV       ?V0,#0x2
-   \   0000DC   75..00       MOV       ?V1,#0x0
-   \   0000DF   78..         MOV       R0,#?V0
-   \   0000E1   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   0000E4   7C00         MOV       R4,#0x0
-   \   0000E6   7D00         MOV       R5,#0x0
-   \   0000E8   7A24         MOV       R2,#0x24
-   \   0000EA   12....       LCALL     ??Subroutine5_0 & 0xFFFF
+   \   00007B                ; Setup parameters for call to function osal_nv_item_len
+   \   00007B   7A24         MOV       R2,#0x24
+   \   00007D   7B00         MOV       R3,#0x0
+   \   00007F   12....       LCALL     `??osal_nv_item_len::?relay`; Banked call to: osal_nv_item_len
+   \   000082   8A..         MOV       ?V0,R2
+   \   000084   8B..         MOV       ?V1,R3
+   \   000086   AE..         MOV       R6,?V0
+   \   000088                ; Setup parameters for call to function osal_nv_item_len
+   \   000088   7A35         MOV       R2,#0x35
+   \   00008A   7B00         MOV       R3,#0x0
+   \   00008C   12....       LCALL     `??osal_nv_item_len::?relay`; Banked call to: osal_nv_item_len
+   \   00008F   EA           MOV       A,R2
+   \   000090   4B           ORL       A,R3
+   \   000091   7065         JNZ       ??zgInit_2
+   \   000093   7402         MOV       A,#0x2
+   \   000095   6E           XRL       A,R6
+   \   000096   45..         ORL       A,?V1
+   \   000098   705E         JNZ       ??zgInit_2
+   \   00009A                ; Setup parameters for call to function osal_nv_read
+   \   00009A   A8..         MOV       R0,?XSP + 0
+   \   00009C   A9..         MOV       R1,?XSP + 1
+   \   00009E   88..         MOV       ?V0,R0
+   \   0000A0   89..         MOV       ?V1,R1
+   \   0000A2   78..         MOV       R0,#?V0
+   \   0000A4   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000A7   75..02       MOV       ?V0,#0x2
+   \   0000AA   75..00       MOV       ?V1,#0x0
+   \   0000AD   78..         MOV       R0,#?V0
+   \   0000AF   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000B2   7C00         MOV       R4,#0x0
+   \   0000B4   7D00         MOV       R5,#0x0
+   \   0000B6   7A24         MOV       R2,#0x24
+   \   0000B8   12....       LCALL     ??Subroutine6_0 & 0xFFFF
    \                     ??CrossCallReturnLabel_9:
-   \   0000ED   12....       LCALL     ?DEALLOC_XSTACK8
-   \   0000F0   85..82       MOV       DPL,?XSP + 0
-   \   0000F3   85..83       MOV       DPH,?XSP + 1
-   \   0000F6   E0           MOVX      A,@DPTR
-   \   0000F7   F8           MOV       R0,A
-   \   0000F8   A3           INC       DPTR
-   \   0000F9   E0           MOVX      A,@DPTR
-   \   0000FA   F9           MOV       R1,A
-   \   0000FB   90....       MOV       DPTR,#zgPollRate
-   \   0000FE   E8           MOV       A,R0
-   \   0000FF   F0           MOVX      @DPTR,A
-   \   000100   A3           INC       DPTR
-   \   000101   E9           MOV       A,R1
-   \   000102   F0           MOVX      @DPTR,A
-   \   000103   A3           INC       DPTR
-   \   000104   E4           CLR       A
-   \   000105   F0           MOVX      @DPTR,A
-   \   000106   A3           INC       DPTR
-   \   000107   F0           MOVX      @DPTR,A
-   \   000108                ; Setup parameters for call to function osal_nv_item_init
-   \   000108   75....       MOV       ?V0,#zgPollRate & 0xff
-   \   00010B   75....       MOV       ?V1,#(zgPollRate >> 8) & 0xff
-   \   00010E   78..         MOV       R0,#?V0
-   \   000110   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000113   7C04         MOV       R4,#0x4
-   \   000115   7D00         MOV       R5,#0x0
-   \   000117   7A35         MOV       R2,#0x35
-   \   000119   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \   0000BB   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000BE   85..82       MOV       DPL,?XSP + 0
+   \   0000C1   85..83       MOV       DPH,?XSP + 1
+   \   0000C4   E0           MOVX      A,@DPTR
+   \   0000C5   F8           MOV       R0,A
+   \   0000C6   A3           INC       DPTR
+   \   0000C7   E0           MOVX      A,@DPTR
+   \   0000C8   F9           MOV       R1,A
+   \   0000C9   90....       MOV       DPTR,#zgPollRate
+   \   0000CC   E8           MOV       A,R0
+   \   0000CD   F0           MOVX      @DPTR,A
+   \   0000CE   A3           INC       DPTR
+   \   0000CF   E9           MOV       A,R1
+   \   0000D0   F0           MOVX      @DPTR,A
+   \   0000D1   A3           INC       DPTR
+   \   0000D2   E4           CLR       A
+   \   0000D3   F0           MOVX      @DPTR,A
+   \   0000D4   A3           INC       DPTR
+   \   0000D5   F0           MOVX      @DPTR,A
+   \   0000D6                ; Setup parameters for call to function osal_nv_item_init
+   \   0000D6   75....       MOV       ?V0,#zgPollRate & 0xff
+   \   0000D9   75....       MOV       ?V1,#(zgPollRate >> 8) & 0xff
+   \   0000DC   78..         MOV       R0,#?V0
+   \   0000DE   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   0000E1   7C04         MOV       R4,#0x4
+   \   0000E3   7D00         MOV       R5,#0x0
+   \   0000E5   7A35         MOV       R2,#0x35
+   \   0000E7   12....       LCALL     ?Subroutine2 & 0xFFFF
    \                     ??CrossCallReturnLabel_2:
-   \   00011C   12....       LCALL     ?DEALLOC_XSTACK8
-   \   00011F                ; Setup parameters for call to function osal_nv_delete
-   \   00011F   7C02         MOV       R4,#0x2
-   \   000121   7D00         MOV       R5,#0x0
-   \   000123   7A24         MOV       R2,#0x24
-   \   000125   7B00         MOV       R3,#0x0
-   \   000127   12....       LCALL     `??osal_nv_delete::?relay`; Banked call to: osal_nv_delete
+   \   0000EA   12....       LCALL     ?DEALLOC_XSTACK8
+   \   0000ED                ; Setup parameters for call to function osal_nv_delete
+   \   0000ED   7C02         MOV       R4,#0x2
+   \   0000EF   7D00         MOV       R5,#0x0
+   \   0000F1   7A24         MOV       R2,#0x24
+   \   0000F3   7B00         MOV       R3,#0x0
+   \   0000F5   12....       LCALL     `??osal_nv_delete::?relay`; Banked call to: osal_nv_delete
     633          
     634            // Initialize the Extended PAN ID as my own extended address
     635            ZMacGetReq( ZMacExtAddr, zgExtendedPANID );
-   \                     ??zgInit_5:
-   \   00012A                ; Setup parameters for call to function ZMacGetReq
-   \   00012A   7A..         MOV       R2,#zgExtendedPANID & 0xff
-   \   00012C   7B..         MOV       R3,#(zgExtendedPANID >> 8) & 0xff
-   \   00012E   79E2         MOV       R1,#-0x1e
-   \   000130   12....       LCALL     `??ZMacGetReq::?relay`; Banked call to: ZMacGetReq
+   \                     ??zgInit_2:
+   \   0000F8                ; Setup parameters for call to function ZMacGetReq
+   \   0000F8   7A..         MOV       R2,#zgExtendedPANID & 0xff
+   \   0000FA   7B..         MOV       R3,#(zgExtendedPANID >> 8) & 0xff
+   \   0000FC   79E2         MOV       R1,#-0x1e
+   \   0000FE   12....       LCALL     `??ZMacGetReq::?relay`; Banked call to: ZMacGetReq
     636          
     637            // Initialize the items table
     638            zgInitItems( setDefault );
-   \   000133                ; Setup parameters for call to function zgInitItems
-   \   000133   EE           MOV       A,R6
-   \   000134   F9           MOV       R1,A
-   \   000135   12....       LCALL     `??zgInitItems::?relay`; Banked call to: zgInitItems
+   \   000101                ; Setup parameters for call to function zgInitItems
+   \   000101   7901         MOV       R1,#0x1
+   \   000103   12....       LCALL     `??zgInitItems::?relay`; Banked call to: zgInitItems
     639          
     640          #ifndef NONWK
     641            if ( ZG_SECURE_ENABLED )
     642            {
     643              // Initialize the Pre-Configured Key to the default key
     644              zgPreconfigKeyInit( setDefault );
-   \   000138                ; Setup parameters for call to function osal_memset
-   \   000138   7C10         MOV       R4,#0x10
-   \   00013A   7D00         MOV       R5,#0x0
-   \   00013C   7900         MOV       R1,#0x0
-   \   00013E   7402         MOV       A,#0x2
-   \   000140   12....       LCALL     ?XSTACK_DISP101_8
-   \   000143   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
-   \   000146                ; Setup parameters for call to function osal_nv_item_init
-   \   000146   7402         MOV       A,#0x2
-   \   000148   12....       LCALL     ?XSTACK_DISP100_8
-   \   00014B   88..         MOV       ?V0,R0
-   \   00014D   89..         MOV       ?V1,R1
-   \   00014F   78..         MOV       R0,#?V0
-   \   000151   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000154   7C10         MOV       R4,#0x10
-   \   000156   7D00         MOV       R5,#0x0
-   \   000158   7A62         MOV       R2,#0x62
-   \   00015A   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \   000106                ; Setup parameters for call to function osal_memset
+   \   000106   7C10         MOV       R4,#0x10
+   \   000108   7D00         MOV       R5,#0x0
+   \   00010A   7900         MOV       R1,#0x0
+   \   00010C   7402         MOV       A,#0x2
+   \   00010E   12....       LCALL     ?XSTACK_DISP101_8
+   \   000111   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
+   \   000114                ; Setup parameters for call to function osal_nv_item_init
+   \   000114   7402         MOV       A,#0x2
+   \   000116   12....       LCALL     ?XSTACK_DISP100_8
+   \   000119   88..         MOV       ?V0,R0
+   \   00011B   89..         MOV       ?V1,R1
+   \   00011D   78..         MOV       R0,#?V0
+   \   00011F   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000122   7C10         MOV       R4,#0x10
+   \   000124   7D00         MOV       R5,#0x0
+   \   000126   7A62         MOV       R2,#0x62
+   \   000128   12....       LCALL     ?Subroutine2 & 0xFFFF
    \                     ??CrossCallReturnLabel_3:
-   \   00015D   12....       LCALL     ?DEALLOC_XSTACK8
-   \   000160   E9           MOV       A,R1
-   \   000161   7025         JNZ       ??zgInit_6
-   \   000163   EE           MOV       A,R6
-   \   000164   A2E0         MOV       C,0xE0 /* A   */.0
-   \   000166   5020         JNC       ??zgInit_6
-   \   000168                ; Setup parameters for call to function osal_nv_write
-   \   000168   78..         MOV       R0,#?V0
-   \   00016A   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   00016D   75..10       MOV       ?V0,#0x10
-   \   000170   75..00       MOV       ?V1,#0x0
-   \   000173   78..         MOV       R0,#?V0
-   \   000175   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000178   7C00         MOV       R4,#0x0
-   \   00017A   7D00         MOV       R5,#0x0
-   \   00017C   7A62         MOV       R2,#0x62
-   \   00017E   7B00         MOV       R3,#0x0
-   \   000180   12....       LCALL     `??osal_nv_write::?relay`; Banked call to: osal_nv_write
-   \   000183   7404         MOV       A,#0x4
-   \   000185   12....       LCALL     ?DEALLOC_XSTACK8
-   \                     ??zgInit_6:
-   \   000188                ; Setup parameters for call to function osal_memset
-   \   000188   7C10         MOV       R4,#0x10
-   \   00018A   7D00         MOV       R5,#0x0
-   \   00018C   7900         MOV       R1,#0x0
-   \   00018E   7402         MOV       A,#0x2
-   \   000190   12....       LCALL     ?XSTACK_DISP101_8
-   \   000193   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
+   \   00012B   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00012E   E9           MOV       A,R1
+   \   00012F   7020         JNZ       ??zgInit_3
+   \   000131                ; Setup parameters for call to function osal_nv_write
+   \   000131   78..         MOV       R0,#?V0
+   \   000133   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000136   75..10       MOV       ?V0,#0x10
+   \   000139   75..00       MOV       ?V1,#0x0
+   \   00013C   78..         MOV       R0,#?V0
+   \   00013E   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000141   7C00         MOV       R4,#0x0
+   \   000143   7D00         MOV       R5,#0x0
+   \   000145   7A62         MOV       R2,#0x62
+   \   000147   7B00         MOV       R3,#0x0
+   \   000149   12....       LCALL     `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+   \   00014C   7404         MOV       A,#0x4
+   \   00014E   12....       LCALL     ?DEALLOC_XSTACK8
+   \                     ??zgInit_3:
+   \   000151                ; Setup parameters for call to function osal_memset
+   \   000151   7C10         MOV       R4,#0x10
+   \   000153   7D00         MOV       R5,#0x0
+   \   000155   7900         MOV       R1,#0x0
+   \   000157   7402         MOV       A,#0x2
+   \   000159   12....       LCALL     ?XSTACK_DISP101_8
+   \   00015C   12....       LCALL     `??osal_memset::?relay`; Banked call to: osal_memset
     645          
     646              // Initialize NV items for all Keys: NWK, APS, TCLK and Master
     647              ZDSecMgrInitNVKeyTables( setDefault );
-   \   000196                ; Setup parameters for call to function ZDSecMgrInitNVKeyTables
-   \   000196   EE           MOV       A,R6
-   \   000197   F9           MOV       R1,A
-   \   000198   12....       LCALL     `??ZDSecMgrInitNVKeyTables::?relay`; Banked call to: ZDSecMgrInitNVKeyTables
+   \   00015F                ; Setup parameters for call to function ZDSecMgrInitNVKeyTables
+   \   00015F   7901         MOV       R1,#0x1
+   \   000161   12....       LCALL     `??ZDSecMgrInitNVKeyTables::?relay`; Banked call to: ZDSecMgrInitNVKeyTables
     648            }
     649          #endif // NONWK
     650          
     651            // Clear the Config State default
     652            if ( setDefault )
-   \   00019B   EE           MOV       A,R6
-   \   00019C   A2E0         MOV       C,0xE0 /* A   */.0
-   \   00019E   5007         JNC       ??zgInit_7
     653            {
     654              zgWriteStartupOptions( ZG_STARTUP_CLEAR, ZCD_STARTOPT_DEFAULT_CONFIG_STATE );
-   \   0001A0                ; Setup parameters for call to function zgWriteStartupOptions
-   \   0001A0   7A01         MOV       R2,#0x1
-   \   0001A2   7900         MOV       R1,#0x0
-   \   0001A4   12....       LCALL     `??zgWriteStartupOptions::?relay`; Banked call to: zgWriteStartupOptions
+   \   000164                ; Setup parameters for call to function zgWriteStartupOptions
+   \   000164   7A01         MOV       R2,#0x1
+   \   000166   7900         MOV       R1,#0x0
+   \   000168   12....       LCALL     `??zgWriteStartupOptions::?relay`; Banked call to: zgWriteStartupOptions
     655            }
     656            
     657            return ( ZSUCCESS );
-   \                     ??zgInit_7:
-   \   0001A7   7900         MOV       R1,#0x0
-   \   0001A9   7412         MOV       A,#0x12
-   \   0001AB   12....       LCALL     ?DEALLOC_XSTACK8
-   \   0001AE   7F04         MOV       R7,#0x4
-   \   0001B0   02....       LJMP      ?BANKED_LEAVE_XDATA
+   \   00016B   7900         MOV       R1,#0x0
+   \   00016D   7412         MOV       A,#0x12
+   \   00016F   02....       LJMP      ??Subroutine5_0 & 0xFFFF
     658          }
 
    \                                 In  segment BANKED_CODE, align 1, keep-with-next
@@ -1556,18 +1510,34 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
 
    \                                 In  segment BANKED_CODE, align 1, keep-with-next
    \                     ??Subroutine5_0:
+   \   000000   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000003   7F02         MOV       R7,#0x2
+   \   000005   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine6_0:
    \   000000   7B00         MOV       R3,#0x0
    \   000002   12....       LCALL     `??osal_nv_read::?relay`; Banked call to: osal_nv_read
    \   000005   7404         MOV       A,#0x4
    \   000007   22           RET
 
    \                                 In  segment BANKED_CODE, align 1, keep-with-next
-   \                     ??Subroutine6_0:
+   \                     ?Subroutine1:
+   \   000000   85..82       MOV       DPL,?XSP + 0
+   \   000003   85..83       MOV       DPH,?XSP + 1
+   \   000006   E4           CLR       A
+   \   000007   F0           MOVX      @DPTR,A
+   \   000008   A3           INC       DPTR
+   \   000009                REQUIRE ??Subroutine7_0
+   \   000009                ; // Fall through to label ??Subroutine7_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine7_0:
    \   000000   F0           MOVX      @DPTR,A
    \   000001                ; Setup parameters for call to function osal_nv_item_init
-   \   000001                ; Setup parameters for call to function osal_nv_read
-   \   000001                ; Setup parameters for call to function osal_nv_item_init
    \   000001                ; Setup parameters for call to function osal_nv_write
+   \   000001                ; Setup parameters for call to function osal_nv_item_init
+   \   000001                ; Setup parameters for call to function osal_nv_read
    \   000001                ; Setup parameters for call to function osal_nv_write
    \   000001   A8..         MOV       R0,?XSP + 0
    \   000003   A9..         MOV       R1,?XSP + 1
@@ -1761,71 +1731,65 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
    \   000007   12....       LCALL     ?ALLOC_XSTACK8
     706            // Default to Use Config State and Use Network State
     707            uint8 startupOption = 0;
-   \   00000A   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \   00000A   85..82       MOV       DPL,?XSP + 0
+   \   00000D   85..83       MOV       DPH,?XSP + 1
+   \   000010   E4           CLR       A
+   \   000011   12....       LCALL     ??Subroutine7_0 & 0xFFFF
     708          
     709            // This should have been done in ZMain.c, but just in case.
     710            if ( osal_nv_item_init( ZCD_NV_STARTUP_OPTION,
     711                                        sizeof(startupOption),
     712                                        &startupOption ) == ZSUCCESS )
-   \                     ??CrossCallReturnLabel_10:
-   \   00000D   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000010   7C01         MOV       R4,#0x1
-   \   000012   7D00         MOV       R5,#0x0
-   \   000014   7A03         MOV       R2,#0x3
-   \   000016   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   000014   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000017   7C01         MOV       R4,#0x1
+   \   000019   7D00         MOV       R5,#0x0
+   \   00001B   7A03         MOV       R2,#0x3
+   \   00001D   12....       LCALL     ?Subroutine2 & 0xFFFF
    \                     ??CrossCallReturnLabel_4:
-   \   000019   12....       LCALL     ?DEALLOC_XSTACK8
-   \   00001C   E9           MOV       A,R1
-   \   00001D   7016         JNZ       ??zgReadStartupOptions_0
+   \   000020   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000023   E9           MOV       A,R1
+   \   000024   7016         JNZ       ??zgReadStartupOptions_0
     713            {
     714              // Read saved startup control
     715              osal_nv_read( ZCD_NV_STARTUP_OPTION,
     716                            0,
     717                            sizeof( startupOption ),
     718                            &startupOption);
-   \   00001F                ; Setup parameters for call to function osal_nv_read
-   \   00001F   78..         MOV       R0,#?V0
-   \   000021   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000024   75..01       MOV       ?V0,#0x1
-   \   000027   75..00       MOV       ?V1,#0x0
-   \   00002A   78..         MOV       R0,#?V0
-   \   00002C   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   00002F   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \   000026                ; Setup parameters for call to function osal_nv_read
+   \   000026   78..         MOV       R0,#?V0
+   \   000028   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00002B   75..01       MOV       ?V0,#0x1
+   \   00002E   75..00       MOV       ?V1,#0x0
+   \   000031   78..         MOV       R0,#?V0
+   \   000033   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000036   12....       LCALL     ?Subroutine3 & 0xFFFF
     719            }
    \                     ??CrossCallReturnLabel_6:
-   \   000032   12....       LCALL     ?DEALLOC_XSTACK8
+   \   000039   12....       LCALL     ?DEALLOC_XSTACK8
     720            return ( startupOption );
    \                     ??zgReadStartupOptions_0:
-   \   000035   85..82       MOV       DPL,?XSP + 0
-   \   000038   85..83       MOV       DPH,?XSP + 1
-   \   00003B   E0           MOVX      A,@DPTR
-   \   00003C   F9           MOV       R1,A
-   \   00003D                REQUIRE ?Subroutine0
-   \   00003D                ; // Fall through to label ?Subroutine0
+   \   00003C   85..82       MOV       DPL,?XSP + 0
+   \   00003F   85..83       MOV       DPH,?XSP + 1
+   \   000042   E0           MOVX      A,@DPTR
+   \   000043   F9           MOV       R1,A
+   \   000044                REQUIRE ?Subroutine0
+   \   000044                ; // Fall through to label ?Subroutine0
     721          }
 
    \                                 In  segment BANKED_CODE, align 1, keep-with-next
    \                     ?Subroutine0:
    \   000000   7401         MOV       A,#0x1
-   \   000002   12....       LCALL     ?DEALLOC_XSTACK8
-   \   000005   7F02         MOV       R7,#0x2
-   \   000007   02....       LJMP      ?BANKED_LEAVE_XDATA
+   \   000002                REQUIRE ??Subroutine5_0
+   \   000002                ; // Fall through to label ??Subroutine5_0
 
    \                                 In  segment BANKED_CODE, align 1, keep-with-next
    \                     ?Subroutine3:
    \   000000   7C00         MOV       R4,#0x0
    \   000002   7D00         MOV       R5,#0x0
    \   000004   7A03         MOV       R2,#0x3
-   \   000006                REQUIRE ??Subroutine5_0
-   \   000006                ; // Fall through to label ??Subroutine5_0
-
-   \                                 In  segment BANKED_CODE, align 1, keep-with-next
-   \                     ?Subroutine1:
-   \   000000   85..82       MOV       DPL,?XSP + 0
-   \   000003   85..83       MOV       DPH,?XSP + 1
-   \   000006   E4           CLR       A
-   \   000007                REQUIRE ??Subroutine6_0
-   \   000007                ; // Fall through to label ??Subroutine6_0
+   \   000006                REQUIRE ??Subroutine6_0
+   \   000006                ; // Fall through to label ??Subroutine6_0
     722          
     723          /*********************************************************************
     724           * @fn          zgWriteStartupOptions
@@ -1861,52 +1825,55 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
    \   00000D   FF           MOV       R7,A
     740            uint8 status;
     741            uint8 startupOptions = 0;
-   \   00000E   12....       LCALL     ?Subroutine1 & 0xFFFF
+   \   00000E   85..82       MOV       DPL,?XSP + 0
+   \   000011   85..83       MOV       DPH,?XSP + 1
+   \   000014   E4           CLR       A
+   \   000015   12....       LCALL     ??Subroutine7_0 & 0xFFFF
     742          
     743            status = osal_nv_read( ZCD_NV_STARTUP_OPTION,
     744                          0,
     745                          sizeof( startupOptions ),
     746                          &startupOptions );
-   \                     ??CrossCallReturnLabel_11:
-   \   000011   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000014   75..01       MOV       ?V0,#0x1
-   \   000017   75..00       MOV       ?V1,#0x0
-   \   00001A   78..         MOV       R0,#?V0
-   \   00001C   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   00001F   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000018   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00001B   75..01       MOV       ?V0,#0x1
+   \   00001E   75..00       MOV       ?V1,#0x0
+   \   000021   78..         MOV       R0,#?V0
+   \   000023   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000026   12....       LCALL     ?Subroutine3 & 0xFFFF
    \                     ??CrossCallReturnLabel_7:
-   \   000022   12....       LCALL     ?DEALLOC_XSTACK8
-   \   000025   E9           MOV       A,R1
-   \   000026   F9           MOV       R1,A
+   \   000029   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00002C   E9           MOV       A,R1
+   \   00002D   F9           MOV       R1,A
     747          
     748            if ( status == ZSUCCESS )
-   \   000027   703E         JNZ       ??zgWriteStartupOptions_0
+   \   00002E   703E         JNZ       ??zgWriteStartupOptions_0
     749            {
     750              if ( action == ZG_STARTUP_SET )
-   \   000029   74FF         MOV       A,#-0x1
-   \   00002B   6E           XRL       A,R6
-   \   00002C   700A         JNZ       ??zgWriteStartupOptions_1
+   \   000030   74FF         MOV       A,#-0x1
+   \   000032   6E           XRL       A,R6
+   \   000033   700A         JNZ       ??zgWriteStartupOptions_1
     751              {
     752                // Set bits
     753                startupOptions |= bitOptions;
-   \   00002E   85..82       MOV       DPL,?XSP + 0
-   \   000031   85..83       MOV       DPH,?XSP + 1
-   \   000034   E0           MOVX      A,@DPTR
-   \   000035   4F           ORL       A,R7
-   \   000036   800C         SJMP      ??zgWriteStartupOptions_2
+   \   000035   85..82       MOV       DPL,?XSP + 0
+   \   000038   85..83       MOV       DPH,?XSP + 1
+   \   00003B   E0           MOVX      A,@DPTR
+   \   00003C   4F           ORL       A,R7
+   \   00003D   800C         SJMP      ??zgWriteStartupOptions_2
     754              }
     755              else
     756              {
     757                // Clear bits
     758                startupOptions &= (bitOptions ^ 0xFF);
    \                     ??zgWriteStartupOptions_1:
-   \   000038   74FF         MOV       A,#-0x1
-   \   00003A   6F           XRL       A,R7
-   \   00003B   F8           MOV       R0,A
-   \   00003C   85..82       MOV       DPL,?XSP + 0
-   \   00003F   85..83       MOV       DPH,?XSP + 1
-   \   000042   E0           MOVX      A,@DPTR
-   \   000043   58           ANL       A,R0
+   \   00003F   74FF         MOV       A,#-0x1
+   \   000041   6F           XRL       A,R7
+   \   000042   F8           MOV       R0,A
+   \   000043   85..82       MOV       DPL,?XSP + 0
+   \   000046   85..83       MOV       DPH,?XSP + 1
+   \   000049   E0           MOVX      A,@DPTR
+   \   00004A   58           ANL       A,R0
     759              }
     760          
     761              // Changed?
@@ -1916,26 +1883,26 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
     765                           &startupOptions );
     766            }
    \                     ??zgWriteStartupOptions_2:
-   \   000044   12....       LCALL     ??Subroutine6_0 & 0xFFFF
+   \   00004B   12....       LCALL     ??Subroutine7_0 & 0xFFFF
    \                     ??CrossCallReturnLabel_14:
-   \   000047   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   00004A   75..01       MOV       ?V0,#0x1
-   \   00004D   75..00       MOV       ?V1,#0x0
-   \   000050   78..         MOV       R0,#?V0
-   \   000052   12....       LCALL     ?PUSH_XSTACK_I_TWO
-   \   000055   7C00         MOV       R4,#0x0
-   \   000057   7D00         MOV       R5,#0x0
-   \   000059   7A03         MOV       R2,#0x3
-   \   00005B   7B00         MOV       R3,#0x0
-   \   00005D   12....       LCALL     `??osal_nv_write::?relay`; Banked call to: osal_nv_write
-   \   000060   7404         MOV       A,#0x4
-   \   000062   12....       LCALL     ?DEALLOC_XSTACK8
-   \   000065   E9           MOV       A,R1
-   \   000066   F9           MOV       R1,A
+   \   00004E   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000051   75..01       MOV       ?V0,#0x1
+   \   000054   75..00       MOV       ?V1,#0x0
+   \   000057   78..         MOV       R0,#?V0
+   \   000059   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   00005C   7C00         MOV       R4,#0x0
+   \   00005E   7D00         MOV       R5,#0x0
+   \   000060   7A03         MOV       R2,#0x3
+   \   000062   7B00         MOV       R3,#0x0
+   \   000064   12....       LCALL     `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+   \   000067   7404         MOV       A,#0x4
+   \   000069   12....       LCALL     ?DEALLOC_XSTACK8
+   \   00006C   E9           MOV       A,R1
+   \   00006D   F9           MOV       R1,A
     767          
     768            return ( status );
    \                     ??zgWriteStartupOptions_0:
-   \   000067   02....       LJMP      ?Subroutine0 & 0xFFFF
+   \   00006E   02....       LJMP      ?Subroutine0 & 0xFFFF
     769          }
     770          
     771          /*********************************************************************
@@ -2357,29 +2324,28 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
 
    XSTACK Function
    ------ --------
-     34   zgInit
-       30   -> ZDSecMgrInitNVKeyTables
-       30   -> ZMacGetReq
-       30   -> bdb_setNodeIsOnANetwork
-       30   -> osal_memset
-       30   -> osal_nv_delete
-       32   -> osal_nv_item_init
-       30   -> osal_nv_item_len
-       34   -> osal_nv_read
-       34   -> osal_nv_write
-       30   -> zgInitItems
-       30   -> zgReadStartupOptions
-       30   -> zgWriteStartupOptions
-     48   zgInitItems
+     32   zgInit
+       28   -> ZDSecMgrInitNVKeyTables
+       28   -> ZMacGetReq
+       28   -> bdb_setNodeIsOnANetwork
+       28   -> osal_memset
+       28   -> osal_nv_delete
+       30   -> osal_nv_item_init
+       28   -> osal_nv_item_len
+       32   -> osal_nv_read
+       32   -> osal_nv_write
+       28   -> zgInitItems
+       28   -> zgWriteStartupOptions
+     46   zgInitItems
        16   -> osal_nv_item_init
        18   -> osal_nv_read
        18   -> osal_nv_write
-     45   zgReadStartupOptions
+     15   zgReadStartupOptions
        13   -> osal_nv_item_init
        15   -> osal_nv_read
      16   zgSetItem
        14   -> osal_memcpy
-     45   zgWriteStartupOptions
+     43   zgWriteStartupOptions
        15   -> osal_nv_read
        15   -> osal_nv_write
 
@@ -2436,9 +2402,10 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
        1  ?<Initializer for zgStartDelay>
        6  ??Subroutine4_0
        8  ??Subroutine5_0
-      12  ??Subroutine6_0
-      10  ?Subroutine0
-       7  ?Subroutine1
+       8  ??Subroutine6_0
+      12  ??Subroutine7_0
+       2  ?Subroutine0
+       9  ?Subroutine1
        2  ?Subroutine2
        6  ?Subroutine3
        1  zTouchLinkNwkStartRtr
@@ -2473,7 +2440,7 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
        1  zgEndDeviceTimeoutValue
        8  zgExtendedPANID
        1  zgIndirectMsgTimeout
-     435  zgInit
+     370  zgInit
      189  zgInitItems
      324  zgItemTable
        1  zgMaxBcastRetires
@@ -2492,7 +2459,7 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
        4  zgPollRate
        1  zgPreConfigKeys
        2  zgQueuedPollRate
-      61  zgReadStartupOptions
+      68  zgReadStartupOptions
        2  zgRejoinPollRate
        2  zgResponsePollRate
        1  zgRouteDiscoveryTime
@@ -2508,11 +2475,11 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
        1  zgSwitchCoordKey
        1  zgSwitchCoordKeyIndex
        1  zgUseDefaultTCLK
-     106  zgWriteStartupOptions
+     113  zgWriteStartupOptions
       30  -- Other
 
  
- 975 bytes in segment BANKED_CODE
+ 926 bytes in segment BANKED_CODE
   30 bytes in segment BANK_RELAYS
  324 bytes in segment CODE_C
   67 bytes in segment XDATA_I
@@ -2520,7 +2487,7 @@ C:\Texas Instruments\Z-Stack 3.0.1\Components\stack\sys\ZGlobals.c
   40 bytes in segment XDATA_Z
  
  421 bytes of CODE     memory
- 975 bytes of HUGECODE memory
+ 926 bytes of HUGECODE memory
  107 bytes of XDATA    memory
 
 Errors: none

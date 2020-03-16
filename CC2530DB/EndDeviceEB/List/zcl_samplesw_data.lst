@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR C/C++ Compiler V10.30.1.6000 for 8051               16/Mar/2020  13:18:13
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               16/Mar/2020  15:19:22
 # Copyright 2004-2018 IAR Systems AB.
 # Evaluation license - IAR Embedded Workbench for 8051, Evaluation edition 10.30
 #
@@ -15,17 +15,17 @@
 #        C:\Texas Instruments\Z-Stack
 #        3.0.1\Projects\zstack\HomeAutomation\zigIt\Source\zcl_samplesw_data.c
 #    Command line       =  
-#        -f C:\Users\monster\AppData\Local\Temp\EW3311.tmp ("C:\Texas
+#        -f C:\Users\monster\AppData\Local\Temp\EW1F42.tmp ("C:\Texas
 #        Instruments\Z-Stack
 #        3.0.1\Projects\zstack\HomeAutomation\zigIt\Source\zcl_samplesw_data.c"
-#        -D NV_INIT -D NV_RESTORE -D TC_LINKKEY_JOIN -D ZBA_FALLBACK_NWKKEY -D
-#        POWER_SAVING -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D MT_APP_FUNC -D
-#        MT_SYS_FUNC -D MT_ZDO_FUNC -D MT_ZDO_MGMT -D xZCL_EZMODE -D
+#        -D NV_INIT -D xNV_RESTORE -D TC_LINKKEY_JOIN -D ZBA_FALLBACK_NWKKEY -D
+#        xPOWER_SAVING -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D MT_APP_FUNC
+#        -D MT_SYS_FUNC -D MT_ZDO_FUNC -D MT_ZDO_MGMT -D xZCL_EZMODE -D
 #        MT_APP_CNF_FUNC -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER
 #        -D ZCL_WRITE -D ZCL_REPORT -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_ON_OFF
 #        -D ZCL_GROUPS -D ZCL_DIAGNOSTIC -D FEATURE_SYSTEM_STATS -D
-#        HAL_KEY=FALSE -D HAL_LED=FALSE -D HAL_LCD=FALSE -D HAL_UART=FALSE -lC
-#        "C:\Texas Instruments\Z-Stack
+#        HAL_KEY=FALSE -D HAL_LED=FALSE -D HAL_LCD=FALSE -D HAL_UART=FALSE -D
+#        BDB_REPORTING -lC "C:\Texas Instruments\Z-Stack
 #        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List"
 #        -lA "C:\Texas Instruments\Z-Stack
 #        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List"

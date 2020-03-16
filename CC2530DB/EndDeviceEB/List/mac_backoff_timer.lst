@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR C/C++ Compiler V10.30.1.6000 for 8051               16/Mar/2020  12:48:28
+# IAR C/C++ Compiler V10.30.1.6000 for 8051               16/Mar/2020  15:19:20
 # Copyright 2004-2018 IAR Systems AB.
 # Evaluation license - IAR Embedded Workbench for 8051, Evaluation edition 10.30
 #
@@ -15,31 +15,31 @@
 #        C:\Texas Instruments\Z-Stack
 #        3.0.1\Components\mac\low_level\srf04\mac_backoff_timer.c
 #    Command line       =  
-#        -f C:\Users\monster\AppData\Local\Temp\EWF80A.tmp ("C:\Texas
+#        -f C:\Users\monster\AppData\Local\Temp\EW1541.tmp ("C:\Texas
 #        Instruments\Z-Stack
 #        3.0.1\Components\mac\low_level\srf04\mac_backoff_timer.c" -D NV_INIT
-#        -D NV_RESTORE -D TC_LINKKEY_JOIN -D ZBA_FALLBACK_NWKKEY -D
-#        POWER_SAVING -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D MT_APP_FUNC -D
-#        MT_SYS_FUNC -D MT_ZDO_FUNC -D MT_ZDO_MGMT -D xZCL_EZMODE -D
+#        -D xNV_RESTORE -D TC_LINKKEY_JOIN -D ZBA_FALLBACK_NWKKEY -D
+#        xPOWER_SAVING -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D MT_APP_FUNC
+#        -D MT_SYS_FUNC -D MT_ZDO_FUNC -D MT_ZDO_MGMT -D xZCL_EZMODE -D
 #        MT_APP_CNF_FUNC -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER
 #        -D ZCL_WRITE -D ZCL_REPORT -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_ON_OFF
 #        -D ZCL_GROUPS -D ZCL_DIAGNOSTIC -D FEATURE_SYSTEM_STATS -D
-#        HAL_KEY=FALSE -D HAL_LED=FALSE -D HAL_LCD=FALSE -D HAL_UART=FALSE -lC
-#        "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List"
+#        HAL_KEY=FALSE -D HAL_LED=FALSE -D HAL_LCD=FALSE -D HAL_UART=FALSE -D
+#        BDB_REPORTING -lC "C:\Texas Instruments\Z-Stack
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List"
 #        -lA "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List"
 #        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\Obj"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\Obj"
 #        -e --debug --core=plain --dptr=16,1 --data_model=large
 #        --code_model=banked --calling_convention=xdata_reentrant
 #        --place_constants=data_rom --nr_virtual_regs 16 -f "C:\Texas
 #        Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
 #        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
 #        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f "C:\Texas
 #        Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
 #        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
 #        -DDEFAULT_CHANLIST=MAX_CHANNELS_24GHZ -DZDAPP_CONFIG_PAN_ID=0xFFFF
 #        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
@@ -55,65 +55,65 @@
 #        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
 #        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
 #        -f "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\" -I
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\" -I "C:\Texas
+#        Instruments\Z-Stack
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\Source\" -I
 #        "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\Source\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\Source\" -I
+#        "C:\Texas Instruments\Z-Stack
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\ZMain\TI2530DB\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\Source\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\hal\include\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\include\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\mt\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\osal\include\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\mt\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\services\saddr\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\services\sdata\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\af\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\gp\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\gp\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sec\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\sys\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\zmac\"
 #        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
-#        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\"
-#        -I "C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
 #        -Ohz --require_prototypes)
 #    Locale             =  Russian_RUS.1251
 #    List file          =  
 #        C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\List\mac_backoff_timer.lst
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\List\mac_backoff_timer.lst
 #    Object file        =  
 #        C:\Texas Instruments\Z-Stack
-#        3.0.1\Projects\zstack\HomeAutomation\SampleSwitch\CC2530DB\EndDeviceEB\Obj\mac_backoff_timer.r51
+#        3.0.1\Projects\zstack\HomeAutomation\zigIt\CC2530DB\EndDeviceEB\Obj\mac_backoff_timer.r51
 #
 ###############################################################################
 

@@ -306,10 +306,10 @@
                 <option>
                     <name>CCDefines</name>
                     <state>NV_INIT</state>
-                    <state>NV_RESTORE</state>
+                    <state>xNV_RESTORE</state>
                     <state>TC_LINKKEY_JOIN</state>
                     <state>ZBA_FALLBACK_NWKKEY</state>
-                    <state>POWER_SAVING</state>
+                    <state>xPOWER_SAVING</state>
                     <state>NWK_AUTO_POLL</state>
                     <state>ZTOOL_P1</state>
                     <state>MT_TASK</state>
@@ -334,6 +334,7 @@
                     <state>HAL_LED=FALSE</state>
                     <state>HAL_LCD=FALSE</state>
                     <state>HAL_UART=FALSE</state>
+                    <state>BDB_REPORTING</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>

@@ -103,6 +103,7 @@ extern CONST uint8 zclZigIt_NumAttributes;
   * Initialization for the task
   */
 extern void zclZigIt_Init( byte task_id );
+void zclZigIt_Reporting(uint16 REPORT_REASON);
 
 /*
  *  Event Process for the task
@@ -117,6 +118,9 @@ extern void zclZigIt_ResetAttributesToDefaultValues(void); //implemented in zcl_
 extern void zclSampleLight_OnOffCB (uint8 cmd);
 /*********************************************************************
 *********************************************************************/
+
+extern void zclSampleLight_OnOffCB (uint8 cmd);
+//void zclZigIt_Reporting(uint16 REPORT_REASON);
 
 #ifdef __cplusplus
 }
