@@ -52,7 +52,7 @@
 
     <TOGGLE LIGHT> Send an On, Off or Toggle command targeting appropriate devices from the binding table.
       Pressing / releasing [OK] will have the following functionality, depending on the value of the 
-      zclSampleSw_OnOffSwitchActions attribute:
+      zclZigIt_OnOffSwitchActions attribute:
       - OnOffSwitchActions == 0: pressing [OK] will send ON command, releasing it will send OFF command;
       - OnOffSwitchActions == 1: pressing [OK] will send OFF command, releasing it will send ON command;
       - OnOffSwitchActions == 2: pressing [OK] will send TOGGLE command, releasing it will not send any command.
@@ -111,13 +111,13 @@
 /*********************************************************************
  * GLOBAL VARIABLES
  */
-byte zclSampleSw_TaskID;
+byte zclZigIt_TaskID;
 
-uint8 zclSampleSwSeqNum;
+uint8 zclZigItSeqNum;
 
-uint8 zclSampleSw_OnOffSwitchType = ON_OFF_SWITCH_TYPE_MOMENTARY;
+uint8 zclZigIt_OnOffSwitchType = ON_OFF_SWITCH_TYPE_MOMENTARY;
 
-uint8 zclSampleSw_OnOffSwitchActions;
+uint8 zclZigIt_OnOffSwitchActions;
 
 /*********************************************************************
  * GLOBAL FUNCTIONS
@@ -126,21 +126,21 @@ uint8 zclSampleSw_OnOffSwitchActions;
 /*********************************************************************
  * LOCAL VARIABLES
  */
-afAddrType_t zclSampleSw_DstAddr;
+afAddrType_t zclZigIt_DstAddr;
 
 // Endpoint to allow SYS_APP_MSGs
 static endPointDesc_t sampleSw_TestEp =
 {
   SAMPLESW_ENDPOINT,                  // endpoint
   0,
-  &zclSampleSw_TaskID,
+  &zclZigIt_TaskID,
   (SimpleDescriptionFormat_t *)NULL,  // No Simple description for this test endpoint
   (afNetworkLatencyReq_t)0            // No Network Latency req
 };
 
 //static uint8 aProcessCmd[] = { 1, 0, 0, 0 }; // used for reset command, { length + cmd0 + cmd1 + data }
 
-devStates_t zclSampleSw_NwkState = DEV_INIT;
+devStates_t zclZigIt_NwkState = DEV_INIT;
 
 #if defined (OTA_CLIENT) && (OTA_CLIENT == TRUE)
 #define DEVICE_POLL_RATE                 8000   // Poll rate for end device
@@ -150,10 +150,10 @@ devStates_t zclSampleSw_NwkState = DEV_INIT;
 /*********************************************************************
  * LOCAL FUNCTIONS
  */
-static void zclSampleSw_HandleKeys( byte shift, byte keys );
-static void zclSampleSw_BasicResetCB( void );
+static void zclZigIt_HandleKeys( byte shift, byte keys );
+static void zclZigIt_BasicResetCB( void );
 
-static void zclSampleSw_ProcessCommissioningStatus(bdbCommissioningModeMsg_t *bdbCommissioningModeMsg);
+static void zclZigIt_ProcessCommissioningStatus(bdbCommissioningModeMsg_t *bdbCommissioningModeMsg);
 #define ZCLSAMPLELIGHT_BINDINGLIST       2
 static cId_t bindingInClusters[ZCLSAMPLELIGHT_BINDINGLIST] =
 {
@@ -165,40 +165,40 @@ static cId_t bindingInClusters[ZCLSAMPLELIGHT_BINDINGLIST] =
 //static endPointDesc_t sampleLight_TestEp =
 //{
 //  20,                                 // Test endpoint
-//  &zclSampleSw_TaskID,
+//  &zclZigIt_TaskID,
 //  (SimpleDescriptionFormat_t *)NULL,  // No Simple description for this test endpoint
 //  (afNetworkLatencyReq_t)0            // No Network Latency req
 //};
 
 // Functions to process ZCL Foundation incoming Command/Response messages
-static void zclSampleSw_ProcessIncomingMsg( zclIncomingMsg_t *msg );
+static void zclZigIt_ProcessIncomingMsg( zclIncomingMsg_t *msg );
 #ifdef ZCL_READ
-static uint8 zclSampleSw_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg );
+static uint8 zclZigIt_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg );
 #endif
 #ifdef ZCL_WRITE
-static uint8 zclSampleSw_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg );
+static uint8 zclZigIt_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg );
 #endif
-static uint8 zclSampleSw_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg );
+static uint8 zclZigIt_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg );
 #ifdef ZCL_DISCOVER
-static uint8 zclSampleSw_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg );
-static uint8 zclSampleSw_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg );
-static uint8 zclSampleSw_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg );
+static uint8 zclZigIt_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg );
+static uint8 zclZigIt_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg );
+static uint8 zclZigIt_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg );
 #endif
 
 #if defined (OTA_CLIENT) && (OTA_CLIENT == TRUE)
-static void zclSampleSw_ProcessOTAMsgs( zclOTA_CallbackMsg_t* pMsg );
+static void zclZigIt_ProcessOTAMsgs( zclOTA_CallbackMsg_t* pMsg );
 #endif
 
-void zclSampleSw_UiActionToggleLight(uint16 keys);
-void zclSampleSw_UiUpdateLcd(uint8 uiCurrentState, char * line[3]);
+void zclZigIt_UiActionToggleLight(uint16 keys);
+void zclZigIt_UiUpdateLcd(uint8 uiCurrentState, char * line[3]);
 
 /*********************************************************************
  * CONSTANTS
  */
-  const uiState_t zclSampleSw_UiStatesMain[] = 
+  const uiState_t zclZigIt_UiStatesMain[] = 
   {
     /*  UI_STATE_BACK_FROM_APP_MENU  */   {UI_STATE_DEFAULT_MOVE,       UI_STATE_TOGGLE_LIGHT,  UI_KEY_SW_5_PRESSED, &UI_ActionBackFromAppMenu}, //do not change this line, except for the second item, which should point to the last entry in this menu
-    /*  UI_STATE_TOGGLE_LIGHT        */   {UI_STATE_BACK_FROM_APP_MENU, UI_STATE_DEFAULT_MOVE,  UI_KEY_SW_5_PRESSED | UI_KEY_SW_5_RELEASED, &zclSampleSw_UiActionToggleLight},
+    /*  UI_STATE_TOGGLE_LIGHT        */   {UI_STATE_BACK_FROM_APP_MENU, UI_STATE_DEFAULT_MOVE,  UI_KEY_SW_5_PRESSED | UI_KEY_SW_5_RELEASED, &zclZigIt_UiActionToggleLight},
   };
   
 /*********************************************************************
@@ -209,9 +209,9 @@ extern int16 zdpExternalStateTaskID;
 /*********************************************************************
  * ZCL General Profile Callback table
  */
-static zclGeneral_AppCallbacks_t zclSampleSw_CmdCallbacks =
+static zclGeneral_AppCallbacks_t zclZigIt_CmdCallbacks =
 {
-  zclSampleSw_BasicResetCB,               // Basic Cluster Reset command
+  zclZigIt_BasicResetCB,               // Basic Cluster Reset command
   NULL,                                   // Identify Trigger Effect command
   NULL,                                   // On/Off cluster commands, zclSampleLight_OnOffCB
   NULL,                                   // On/Off cluster enhanced command Off with Effect
@@ -244,7 +244,7 @@ static zclGeneral_AppCallbacks_t zclSampleSw_CmdCallbacks =
 
 
 /*********************************************************************
- * @fn          zclSampleSw_Init
+ * @fn          zclZigIt_Init
  *
  * @brief       Initialization function for the zclGeneral layer.
  *
@@ -252,33 +252,33 @@ static zclGeneral_AppCallbacks_t zclSampleSw_CmdCallbacks =
  *
  * @return      none
  */
-void zclSampleSw_Init( byte task_id )
+void zclZigIt_Init( byte task_id )
 {
-  zclSampleSw_TaskID = task_id;
+  zclZigIt_TaskID = task_id;
 
   // Set destination address to indirect
-  zclSampleSw_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
-  zclSampleSw_DstAddr.endPoint = 0;
-  zclSampleSw_DstAddr.addr.shortAddr = 0xFFFF;
+  zclZigIt_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+  zclZigIt_DstAddr.endPoint = 0;
+  zclZigIt_DstAddr.addr.shortAddr = 0xFFFF;
 
   // Register the Simple Descriptor for this application
-  bdb_RegisterSimpleDescriptor( &zclSampleSw_SimpleDesc );
+  bdb_RegisterSimpleDescriptor( &zclZigIt_SimpleDesc );
 
   // Register the ZCL General Cluster Library callback functions
-  zclGeneral_RegisterCmdCallbacks( SAMPLESW_ENDPOINT, &zclSampleSw_CmdCallbacks );
+  zclGeneral_RegisterCmdCallbacks( SAMPLESW_ENDPOINT, &zclZigIt_CmdCallbacks );
 
-  zclSampleSw_ResetAttributesToDefaultValues();
+  zclZigIt_ResetAttributesToDefaultValues();
   
   // Register the application's attribute list
-  zcl_registerAttrList( SAMPLESW_ENDPOINT, zclSampleSw_NumAttributes, zclSampleSw_Attrs );
+  zcl_registerAttrList( SAMPLESW_ENDPOINT, zclZigIt_NumAttributes, zclZigIt_Attrs );
 
   // Register the Application to receive the unprocessed Foundation command/response messages
-  zcl_registerForMsg( zclSampleSw_TaskID );
+  zcl_registerForMsg( zclZigIt_TaskID );
   
   // Register for all key events - This app will handle all key events
-  RegisterForKeys( zclSampleSw_TaskID );
+  RegisterForKeys( zclZigIt_TaskID );
   
-  bdb_RegisterCommissioningStatusCB( zclSampleSw_ProcessCommissioningStatus );
+  bdb_RegisterCommissioningStatusCB( zclZigIt_ProcessCommissioningStatus );
 
   // Register for a test endpoint
   afRegister( &sampleSw_TestEp );
@@ -296,15 +296,15 @@ void zclSampleSw_Init( byte task_id )
 
 #if defined (OTA_CLIENT) && (OTA_CLIENT == TRUE)
   // Register for callback events from the ZCL OTA
-  zclOTA_Register(zclSampleSw_TaskID);
+  zclOTA_Register(zclZigIt_TaskID);
 #endif
 
-  zdpExternalStateTaskID = zclSampleSw_TaskID;
+  zdpExternalStateTaskID = zclZigIt_TaskID;
 
-  UI_Init(zclSampleSw_TaskID, SAMPLEAPP_LCD_AUTO_UPDATE_EVT, SAMPLEAPP_KEY_AUTO_REPEAT_EVT, &zclSampleSw_IdentifyTime, APP_TITLE, &zclSampleSw_UiUpdateLcd, zclSampleSw_UiStatesMain);
+  //UI_Init(zclZigIt_TaskID, SAMPLEAPP_LCD_AUTO_UPDATE_EVT, SAMPLEAPP_KEY_AUTO_REPEAT_EVT, &zclZigIt_IdentifyTime, APP_TITLE, &zclZigIt_UiUpdateLcd, zclZigIt_UiStatesMain);
 
-  UI_UpdateLcd();
-  osal_start_timerEx(zclSampleSw_TaskID,SAMPLESW_TOGGLE_TEST_EVT,5000);
+  //UI_UpdateLcd();
+  osal_start_timerEx(zclZigIt_TaskID,SAMPLESW_TOGGLE_TEST_EVT,5000);
   
   //bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING);
     bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING);
@@ -332,7 +332,7 @@ void zclSampleSw_Init( byte task_id )
  *
  * @return      none
  */
-uint16 zclSampleSw_event_loop( uint8 task_id, uint16 events )
+uint16 zclZigIt_event_loop( uint8 task_id, uint16 events )
 {
   afIncomingMSGPacket_t *MSGpkt;
   (void)task_id;  // Intentionally unreferenced parameter
@@ -340,11 +340,11 @@ uint16 zclSampleSw_event_loop( uint8 task_id, uint16 events )
   //Send toggle every 500ms
   if( events & SAMPLESW_TOGGLE_TEST_EVT )
   {
-    osal_start_timerEx(zclSampleSw_TaskID,SAMPLESW_TOGGLE_TEST_EVT,5000);
-    //zclGeneral_SendOnOff_CmdToggle( SAMPLESW_ENDPOINT, &zclSampleSw_DstAddr, FALSE, 0 );
-    zclGeneral_SendOnOff_CmdOn( SAMPLESW_ENDPOINT, &zclSampleSw_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+    osal_start_timerEx(zclZigIt_TaskID,SAMPLESW_TOGGLE_TEST_EVT,5000);
+    //zclGeneral_SendOnOff_CmdToggle( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, 0 );
+    zclGeneral_SendOnOff_CmdOn( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, bdb_getZCLFrameCounter() );
     
-    zclGeneral_SendOnOff_CmdOff( SAMPLESW_ENDPOINT, &zclSampleSw_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+    zclGeneral_SendOnOff_CmdOff( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, bdb_getZCLFrameCounter() );
    
     // return unprocessed events
     return (events ^ SAMPLESW_TOGGLE_TEST_EVT);
@@ -353,26 +353,26 @@ uint16 zclSampleSw_event_loop( uint8 task_id, uint16 events )
   
   if ( events & SYS_EVENT_MSG )
   {
-    while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( zclSampleSw_TaskID )) )
+    while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( zclZigIt_TaskID )) )
     {
       switch ( MSGpkt->hdr.event )
       {
         case ZCL_INCOMING_MSG:
           // Incoming ZCL Foundation command/response messages
-          zclSampleSw_ProcessIncomingMsg( (zclIncomingMsg_t *)MSGpkt );
+          zclZigIt_ProcessIncomingMsg( (zclIncomingMsg_t *)MSGpkt );
           break;
 
         case KEY_CHANGE:
-          zclSampleSw_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+          zclZigIt_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
           break;
 
         case ZDO_STATE_CHANGE:
-          UI_DeviceStateUpdated((devStates_t)(MSGpkt->hdr.status));
+          //UI_DeviceStateUpdated((devStates_t)(MSGpkt->hdr.status));
           break;
 
 #if defined (OTA_CLIENT) && (OTA_CLIENT == TRUE)
         case ZCL_OTA_CALLBACK_IND:
-          zclSampleSw_ProcessOTAMsgs( (zclOTA_CallbackMsg_t*)MSGpkt  );
+          zclZigIt_ProcessOTAMsgs( (zclOTA_CallbackMsg_t*)MSGpkt  );
           break;
 #endif
 
@@ -401,7 +401,7 @@ uint16 zclSampleSw_event_loop( uint8 task_id, uint16 events )
 }
 
 /*********************************************************************
- * @fn      zclSampleSw_HandleKeys
+ * @fn      zclZigIt_HandleKeys
  *
  * @brief   Handles all key events for this device.
  *
@@ -414,14 +414,14 @@ uint16 zclSampleSw_event_loop( uint8 task_id, uint16 events )
  *
  * @return  none
  */
-static void zclSampleSw_HandleKeys( byte shift, byte keys )
+static void zclZigIt_HandleKeys( byte shift, byte keys )
 {
-  UI_MainStateMachine(keys);
+  //UI_MainStateMachine(keys);
 }
 
 
 /*********************************************************************
- * @fn      zclSampleSw_ProcessCommissioningStatus
+ * @fn      zclZigIt_ProcessCommissioningStatus
  *
  * @brief   Callback in which the status of the commissioning process are reported
  *
@@ -429,7 +429,7 @@ static void zclSampleSw_HandleKeys( byte shift, byte keys )
  *
  * @return  none
  */
-static void zclSampleSw_ProcessCommissioningStatus(bdbCommissioningModeMsg_t *bdbCommissioningModeMsg)
+static void zclZigIt_ProcessCommissioningStatus(bdbCommissioningModeMsg_t *bdbCommissioningModeMsg)
 {
   switch(bdbCommissioningModeMsg->bdbCommissioningMode)
   {
@@ -487,17 +487,17 @@ static void zclSampleSw_ProcessCommissioningStatus(bdbCommissioningModeMsg_t *bd
       else
       {
         //Parent not found, attempt to rejoin again after a fixed delay
-        osal_start_timerEx(zclSampleSw_TaskID, SAMPLEAPP_END_DEVICE_REJOIN_EVT, SAMPLEAPP_END_DEVICE_REJOIN_DELAY);
+        osal_start_timerEx(zclZigIt_TaskID, SAMPLEAPP_END_DEVICE_REJOIN_EVT, SAMPLEAPP_END_DEVICE_REJOIN_DELAY);
       }
     break;
 #endif 
   }
   
-  UI_UpdateComissioningStatus(bdbCommissioningModeMsg);
+  //UI_UpdateComissioningStatus(bdbCommissioningModeMsg);
 }
 
 /*********************************************************************
- * @fn      zclSampleSw_BasicResetCB
+ * @fn      zclZigIt_BasicResetCB
  *
  * @brief   Callback from the ZCL General Cluster Library
  *          to set all the Basic Cluster attributes to  default values.
@@ -506,12 +506,25 @@ static void zclSampleSw_ProcessCommissioningStatus(bdbCommissioningModeMsg_t *bd
  *
  * @return  none
  */
-static void zclSampleSw_BasicResetCB( void )
+static void zclZigIt_BasicResetCB( void )
 {
-  zclSampleSw_ResetAttributesToDefaultValues();
-
-  // update the display
-  UI_UpdateLcd( ); 
+  zclZigIt_ResetAttributesToDefaultValues();
+  NLME_LeaveReq_t leaveReq;
+  // Set every field to 0
+  osal_memset( &leaveReq, 0, sizeof( NLME_LeaveReq_t ) );
+  
+  // This will enable the device to rejoin the network after reset.
+  leaveReq.rejoin = TRUE;
+  
+  // Set the NV startup option to force a "new" join.
+  zgWriteStartupOptions( ZG_STARTUP_SET, ZCD_STARTOPT_DEFAULT_NETWORK_STATE );
+  
+  // Leave the network, and reset afterwards
+  if ( NLME_LeaveReq( &leaveReq ) != ZSuccess )
+  {
+    // Couldn't send out leave; prepare to reset anyway
+    ZDApp_LeaveReset( FALSE );
+  }
 }
 
 /******************************************************************************
@@ -521,7 +534,7 @@ static void zclSampleSw_BasicResetCB( void )
  *****************************************************************************/
 
 /*********************************************************************
- * @fn      zclSampleSw_ProcessIncomingMsg
+ * @fn      zclZigIt_ProcessIncomingMsg
  *
  * @brief   Process ZCL Foundation incoming message
  *
@@ -529,60 +542,60 @@ static void zclSampleSw_BasicResetCB( void )
  *
  * @return  none
  */
-static void zclSampleSw_ProcessIncomingMsg( zclIncomingMsg_t *pInMsg )
+static void zclZigIt_ProcessIncomingMsg( zclIncomingMsg_t *pInMsg )
 {
   switch ( pInMsg->zclHdr.commandID )
   {
 #ifdef ZCL_READ
     case ZCL_CMD_READ_RSP:
-      zclSampleSw_ProcessInReadRspCmd( pInMsg );
+      zclZigIt_ProcessInReadRspCmd( pInMsg );
       break;
 #endif
 #ifdef ZCL_WRITE
     case ZCL_CMD_WRITE_RSP:
-      zclSampleSw_ProcessInWriteRspCmd( pInMsg );
+      zclZigIt_ProcessInWriteRspCmd( pInMsg );
       break;
 #endif
 #ifdef ZCL_REPORT
     // See ZCL Test Applicaiton (zcl_testapp.c) for sample code on Attribute Reporting
     case ZCL_CMD_CONFIG_REPORT:
-      //zclSampleSw_ProcessInConfigReportCmd( pInMsg );
+      //zclZigIt_ProcessInConfigReportCmd( pInMsg );
       break;
 
     case ZCL_CMD_CONFIG_REPORT_RSP:
-      //zclSampleSw_ProcessInConfigReportRspCmd( pInMsg );
+      //zclZigIt_ProcessInConfigReportRspCmd( pInMsg );
       break;
 
     case ZCL_CMD_READ_REPORT_CFG:
-      //zclSampleSw_ProcessInReadReportCfgCmd( pInMsg );
+      //zclZigIt_ProcessInReadReportCfgCmd( pInMsg );
       break;
 
     case ZCL_CMD_READ_REPORT_CFG_RSP:
-      //zclSampleSw_ProcessInReadReportCfgRspCmd( pInMsg );
+      //zclZigIt_ProcessInReadReportCfgRspCmd( pInMsg );
       break;
 
     case ZCL_CMD_REPORT:
-      //zclSampleSw_ProcessInReportCmd( pInMsg );
+      //zclZigIt_ProcessInReportCmd( pInMsg );
       break;
 #endif
     case ZCL_CMD_DEFAULT_RSP:
-      zclSampleSw_ProcessInDefaultRspCmd( pInMsg );
+      zclZigIt_ProcessInDefaultRspCmd( pInMsg );
       break;
 #ifdef ZCL_DISCOVER
     case ZCL_CMD_DISCOVER_CMDS_RECEIVED_RSP:
-      zclSampleSw_ProcessInDiscCmdsRspCmd( pInMsg );
+      zclZigIt_ProcessInDiscCmdsRspCmd( pInMsg );
       break;
 
     case ZCL_CMD_DISCOVER_CMDS_GEN_RSP:
-      zclSampleSw_ProcessInDiscCmdsRspCmd( pInMsg );
+      zclZigIt_ProcessInDiscCmdsRspCmd( pInMsg );
       break;
 
     case ZCL_CMD_DISCOVER_ATTRS_RSP:
-      zclSampleSw_ProcessInDiscAttrsRspCmd( pInMsg );
+      zclZigIt_ProcessInDiscAttrsRspCmd( pInMsg );
       break;
 
     case ZCL_CMD_DISCOVER_ATTRS_EXT_RSP:
-      zclSampleSw_ProcessInDiscAttrsExtRspCmd( pInMsg );
+      zclZigIt_ProcessInDiscAttrsExtRspCmd( pInMsg );
       break;
 #endif
     default:
@@ -596,7 +609,7 @@ static void zclSampleSw_ProcessIncomingMsg( zclIncomingMsg_t *pInMsg )
 #ifdef ZCL_READ
 
 /*********************************************************************
- * @fn      zclSampleSw_ProcessInReadRspCmd
+ * @fn      zclZigIt_ProcessInReadRspCmd
  *
  * @brief   Process the "Profile" Read Response Command
  *
@@ -604,7 +617,7 @@ static void zclSampleSw_ProcessIncomingMsg( zclIncomingMsg_t *pInMsg )
  *
  * @return  none
  */
-static uint8 zclSampleSw_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
+static uint8 zclZigIt_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
 {
   zclReadRspCmd_t *readRspCmd;
   uint8 i;
@@ -623,7 +636,7 @@ static uint8 zclSampleSw_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
 
 #ifdef ZCL_WRITE
 /*********************************************************************
- * @fn      zclSampleSw_ProcessInWriteRspCmd
+ * @fn      zclZigIt_ProcessInWriteRspCmd
  *
  * @brief   Process the "Profile" Write Response Command
  *
@@ -631,7 +644,7 @@ static uint8 zclSampleSw_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
  *
  * @return  none
  */
-static uint8 zclSampleSw_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
+static uint8 zclZigIt_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
 {
   zclWriteRspCmd_t *writeRspCmd;
   uint8 i;
@@ -648,7 +661,7 @@ static uint8 zclSampleSw_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
 #endif // ZCL_WRITE
 
 /*********************************************************************
- * @fn      zclSampleSw_ProcessInDefaultRspCmd
+ * @fn      zclZigIt_ProcessInDefaultRspCmd
  *
  * @brief   Process the "Profile" Default Response Command
  *
@@ -656,7 +669,7 @@ static uint8 zclSampleSw_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
  *
  * @return  none
  */
-static uint8 zclSampleSw_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
+static uint8 zclZigIt_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
 {
   // zclDefaultRspCmd_t *defaultRspCmd = (zclDefaultRspCmd_t *)pInMsg->attrCmd;
   // Device is notified of the Default Response command.
@@ -666,7 +679,7 @@ static uint8 zclSampleSw_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
 
 #ifdef ZCL_DISCOVER
 /*********************************************************************
- * @fn      zclSampleSw_ProcessInDiscCmdsRspCmd
+ * @fn      zclZigIt_ProcessInDiscCmdsRspCmd
  *
  * @brief   Process the Discover Commands Response Command
  *
@@ -674,7 +687,7 @@ static uint8 zclSampleSw_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
  *
  * @return  none
  */
-static uint8 zclSampleSw_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg )
+static uint8 zclZigIt_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg )
 {
   zclDiscoverCmdsCmdRsp_t *discoverRspCmd;
   uint8 i;
@@ -689,7 +702,7 @@ static uint8 zclSampleSw_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg )
 }
 
 /*********************************************************************
- * @fn      zclSampleSw_ProcessInDiscAttrsRspCmd
+ * @fn      zclZigIt_ProcessInDiscAttrsRspCmd
  *
  * @brief   Process the "Profile" Discover Attributes Response Command
  *
@@ -697,7 +710,7 @@ static uint8 zclSampleSw_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg )
  *
  * @return  none
  */
-static uint8 zclSampleSw_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg )
+static uint8 zclZigIt_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg )
 {
   zclDiscoverAttrsRspCmd_t *discoverRspCmd;
   uint8 i;
@@ -712,7 +725,7 @@ static uint8 zclSampleSw_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg )
 }
 
 /*********************************************************************
- * @fn      zclSampleSw_ProcessInDiscAttrsExtRspCmd
+ * @fn      zclZigIt_ProcessInDiscAttrsExtRspCmd
  *
  * @brief   Process the "Profile" Discover Attributes Extended Response Command
  *
@@ -720,7 +733,7 @@ static uint8 zclSampleSw_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg )
  *
  * @return  none
  */
-static uint8 zclSampleSw_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg )
+static uint8 zclZigIt_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg )
 {
   zclDiscoverAttrsExtRsp_t *discoverRspCmd;
   uint8 i;
@@ -737,7 +750,7 @@ static uint8 zclSampleSw_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg )
 
 #if defined (OTA_CLIENT) && (OTA_CLIENT == TRUE)
 /*********************************************************************
- * @fn      zclSampleSw_ProcessOTAMsgs
+ * @fn      zclZigIt_ProcessOTAMsgs
  *
  * @brief   Called to process callbacks from the ZCL OTA.
  *
@@ -745,7 +758,7 @@ static uint8 zclSampleSw_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg )
  *
  * @return  none
  */
-static void zclSampleSw_ProcessOTAMsgs( zclOTA_CallbackMsg_t* pMsg )
+static void zclZigIt_ProcessOTAMsgs( zclOTA_CallbackMsg_t* pMsg )
 {
   uint8 RxOnIdle;
 
@@ -787,28 +800,28 @@ static void zclSampleSw_ProcessOTAMsgs( zclOTA_CallbackMsg_t* pMsg )
 /****************************************************************************
 ****************************************************************************/
 
-void zclSampleSw_UiActionToggleLight(uint16 keys)
+void zclZigIt_UiActionToggleLight(uint16 keys)
 {
-  if (zclSampleSw_OnOffSwitchActions == ON_OFF_SWITCH_ACTIONS_TOGGLE)
+  if (zclZigIt_OnOffSwitchActions == ON_OFF_SWITCH_ACTIONS_TOGGLE)
   {
     if (keys & UI_KEY_SW_5_PRESSED)
     {
-      zclGeneral_SendOnOff_CmdToggle( SAMPLESW_ENDPOINT, &zclSampleSw_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+      zclGeneral_SendOnOff_CmdToggle( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, bdb_getZCLFrameCounter() );
     }
   }
-  else if (((keys & UI_KEY_SW_5_PRESSED) && (zclSampleSw_OnOffSwitchActions == ON_OFF_SWITCH_ACTIONS_ON))
-    || ((keys & UI_KEY_SW_5_RELEASED) && (zclSampleSw_OnOffSwitchActions == ON_OFF_SWITCH_ACTIONS_OFF)))
+  else if (((keys & UI_KEY_SW_5_PRESSED) && (zclZigIt_OnOffSwitchActions == ON_OFF_SWITCH_ACTIONS_ON))
+    || ((keys & UI_KEY_SW_5_RELEASED) && (zclZigIt_OnOffSwitchActions == ON_OFF_SWITCH_ACTIONS_OFF)))
   {
-    zclGeneral_SendOnOff_CmdOn( SAMPLESW_ENDPOINT, &zclSampleSw_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+    zclGeneral_SendOnOff_CmdOn( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, bdb_getZCLFrameCounter() );
   }
   else
   {
-    zclGeneral_SendOnOff_CmdOff( SAMPLESW_ENDPOINT, &zclSampleSw_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+    zclGeneral_SendOnOff_CmdOff( SAMPLESW_ENDPOINT, &zclZigIt_DstAddr, FALSE, bdb_getZCLFrameCounter() );
   }
 }
 
 
-void zclSampleSw_UiUpdateLcd(uint8 gui_state, char * line[3])
+void zclZigIt_UiUpdateLcd(uint8 gui_state, char * line[3])
 {
   line[2] = "< TOGGLE LIGHT >";
 }

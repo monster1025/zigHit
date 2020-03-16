@@ -79,21 +79,21 @@ extern "C"
 /*********************************************************************
  * VARIABLES
  */
-extern SimpleDescriptionFormat_t zclSampleSw_SimpleDesc;
+extern SimpleDescriptionFormat_t zclZigIt_SimpleDesc;
 
-extern SimpleDescriptionFormat_t zclSampleSw9_SimpleDesc;
+extern SimpleDescriptionFormat_t zclZigIt9_SimpleDesc;
 
-extern CONST zclAttrRec_t zclSampleSw_Attrs[];
+extern CONST zclAttrRec_t zclZigIt_Attrs[];
 
-extern uint8  zclSampleSw_OnOff;
+extern uint8  zclZigIt_OnOff;
 
-extern uint16 zclSampleSw_IdentifyTime;
+extern uint16 zclZigIt_IdentifyTime;
 
-extern uint8 zclSampleSw_OnOffSwitchType;
+extern uint8 zclZigIt_OnOffSwitchType;
 
-extern uint8 zclSampleSw_OnOffSwitchActions;
+extern uint8 zclZigIt_OnOffSwitchActions;
 
-extern CONST uint8 zclSampleSw_NumAttributes;
+extern CONST uint8 zclZigIt_NumAttributes;
 
 /*********************************************************************
  * FUNCTIONS
@@ -102,17 +102,17 @@ extern CONST uint8 zclSampleSw_NumAttributes;
  /*
   * Initialization for the task
   */
-extern void zclSampleSw_Init( byte task_id );
+extern void zclZigIt_Init( byte task_id );
 
 /*
  *  Event Process for the task
  */
-extern UINT16 zclSampleSw_event_loop( byte task_id, UINT16 events );
+extern UINT16 zclZigIt_event_loop( byte task_id, UINT16 events );
 
 /*
  *  Reset all writable attributes to their default values.
  */
-extern void zclSampleSw_ResetAttributesToDefaultValues(void); //implemented in zcl_samplesw_data.c
+extern void zclZigIt_ResetAttributesToDefaultValues(void); //implemented in zcl_samplesw_data.c
 
 extern void zclSampleLight_OnOffCB (uint8 cmd);
 /*********************************************************************

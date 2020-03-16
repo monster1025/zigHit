@@ -89,24 +89,24 @@
  */
 
 //global attributes
-const uint16 zclSampleSw_clusterRevision_all = 0x0001; //currently all cluster implementations are according to ZCL6, which has revision #1. In the future it is possible that different clusters will have different revisions, so they will have to use separate attribute variables.
+const uint16 zclZigIt_clusterRevision_all = 0x0001; //currently all cluster implementations are according to ZCL6, which has revision #1. In the future it is possible that different clusters will have different revisions, so they will have to use separate attribute variables.
 
 // Basic Cluster
 //ptvo.info
 //ptvo.switch
-const uint8 zclSampleSw_HWRevision = SAMPLESW_HWVERSION;
-const uint8 zclSampleSw_ZCLVersion = SAMPLESW_ZCLVERSION;
-const uint8 zclSampleSw_ManufacturerName[] = { 9, 'p','t','v','o','.','i','n','f','o' };
-const uint8 zclSampleSw_ModelId[] = { 11, 'p','t','v','o','.','s','w','i','t','c','h' };
-const uint8 zclSampleSw_DateCode[] = { 16, '2','0','2','0','0','8','2','1',' ',' ',' ',' ',' ',' ',' ',' ' };
-const uint8 zclSampleSw_PowerSource = POWER_SOURCE_MAINS_1_PHASE;
+const uint8 zclZigIt_HWRevision = SAMPLESW_HWVERSION;
+const uint8 zclZigIt_ZCLVersion = SAMPLESW_ZCLVERSION;
+const uint8 zclZigIt_ManufacturerName[] = { 9, 'p','t','v','o','.','i','n','f','o' };
+const uint8 zclZigIt_ModelId[] = { 11, 'p','t','v','o','.','s','w','i','t','c','h' };
+const uint8 zclZigIt_DateCode[] = { 16, '2','0','2','0','0','8','2','1',' ',' ',' ',' ',' ',' ',' ',' ' };
+const uint8 zclZigIt_PowerSource = POWER_SOURCE_MAINS_1_PHASE;
 
-uint8 zclSampleSw_LocationDescription[17] = { 16, ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };;
-uint8 zclSampleSw_PhysicalEnvironment = 0;
-uint8 zclSampleSw_DeviceEnable = DEVICE_ENABLED;
+uint8 zclZigIt_LocationDescription[17] = { 16, ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };;
+uint8 zclZigIt_PhysicalEnvironment = 0;
+uint8 zclZigIt_DeviceEnable = DEVICE_ENABLED;
 
 // Identify Cluster
-uint16 zclSampleSw_IdentifyTime = 0;
+uint16 zclZigIt_IdentifyTime = 0;
 
 /*********************************************************************
  * ATTRIBUTE DEFINITIONS - Uses REAL cluster IDs
@@ -115,7 +115,7 @@ uint16 zclSampleSw_IdentifyTime = 0;
   // NOTE: The attributes listed in the AttrRec must be in ascending order 
   // per cluster to allow right function of the Foundation discovery commands
  
-CONST zclAttrRec_t zclSampleSw_Attrs[] =
+CONST zclAttrRec_t zclZigIt_Attrs[] =
 {
   // *** General Basic Cluster Attributes ***
   {
@@ -124,7 +124,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_BASIC_ZCL_VERSION,
       ZCL_DATATYPE_UINT8,
       ACCESS_CONTROL_READ,
-      (void *)&zclSampleSw_ZCLVersion
+      (void *)&zclZigIt_ZCLVersion
     }
   },  
   {
@@ -133,7 +133,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_BASIC_HW_VERSION,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
       ZCL_DATATYPE_UINT8,                 // Data Type - found in zcl.h
       ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
-      (void *)&zclSampleSw_HWRevision  // Pointer to attribute variable
+      (void *)&zclZigIt_HWRevision  // Pointer to attribute variable
     }
   },
   {
@@ -142,7 +142,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_BASIC_MANUFACTURER_NAME,
       ZCL_DATATYPE_CHAR_STR,
       ACCESS_CONTROL_READ,
-      (void *)zclSampleSw_ManufacturerName
+      (void *)zclZigIt_ManufacturerName
     }
   },
   {
@@ -151,7 +151,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_BASIC_MODEL_ID,
       ZCL_DATATYPE_CHAR_STR,
       ACCESS_CONTROL_READ,
-      (void *)zclSampleSw_ModelId
+      (void *)zclZigIt_ModelId
     }
   },
   {
@@ -160,7 +160,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_BASIC_DATE_CODE,
       ZCL_DATATYPE_CHAR_STR,
       ACCESS_CONTROL_READ,
-      (void *)zclSampleSw_DateCode
+      (void *)zclZigIt_DateCode
     }
   },
   {
@@ -169,7 +169,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_BASIC_POWER_SOURCE,
       ZCL_DATATYPE_ENUM8,
       ACCESS_CONTROL_READ,
-      (void *)&zclSampleSw_PowerSource
+      (void *)&zclZigIt_PowerSource
     }
   },
   {
@@ -178,7 +178,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_BASIC_LOCATION_DESC,
       ZCL_DATATYPE_CHAR_STR,
       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
-      (void *)zclSampleSw_LocationDescription
+      (void *)zclZigIt_LocationDescription
     }
   },
   {
@@ -187,7 +187,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_BASIC_PHYSICAL_ENV,
       ZCL_DATATYPE_ENUM8,
       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
-      (void *)&zclSampleSw_PhysicalEnvironment
+      (void *)&zclZigIt_PhysicalEnvironment
     }
   },
   {
@@ -196,7 +196,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_BASIC_DEVICE_ENABLED,
       ZCL_DATATYPE_BOOLEAN,
       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
-      (void *)&zclSampleSw_DeviceEnable
+      (void *)&zclZigIt_DeviceEnable
     }
   },
   {
@@ -205,7 +205,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_CLUSTER_REVISION,
       ZCL_DATATYPE_UINT16,
       ACCESS_CONTROL_READ,
-      (void *)&zclSampleSw_clusterRevision_all
+      (void *)&zclZigIt_clusterRevision_all
     }
   },  
 
@@ -216,7 +216,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_IDENTIFY_TIME,
       ZCL_DATATYPE_UINT16,
       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
-      (void *)&zclSampleSw_IdentifyTime
+      (void *)&zclZigIt_IdentifyTime
     }
   },  
   {
@@ -225,7 +225,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_CLUSTER_REVISION,
       ZCL_DATATYPE_UINT16,
       ACCESS_CONTROL_READ | ACCESS_GLOBAL,
-      (void *)&zclSampleSw_clusterRevision_all
+      (void *)&zclZigIt_clusterRevision_all
     }
   },
 
@@ -237,7 +237,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_ON_OFF_SWITCH_TYPE,
       ZCL_DATATYPE_ENUM8,
       ACCESS_CONTROL_READ,
-      (void *)&zclSampleSw_OnOffSwitchType
+      (void *)&zclZigIt_OnOffSwitchType
     }
   },
   {
@@ -246,7 +246,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_ON_OFF_SWITCH_ACTIONS,
       ZCL_DATATYPE_ENUM8,
       ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE,
-      (void *)&zclSampleSw_OnOffSwitchActions
+      (void *)&zclZigIt_OnOffSwitchActions
     }
   },
   {
@@ -255,7 +255,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_CLUSTER_REVISION,
       ZCL_DATATYPE_UINT16,
       ACCESS_CONTROL_READ,
-      (void *)&zclSampleSw_clusterRevision_all
+      (void *)&zclZigIt_clusterRevision_all
     }
   },
   // *** On / Off Cluster *** //
@@ -265,7 +265,7 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_CLUSTER_REVISION,
       ZCL_DATATYPE_UINT16,
       ACCESS_CONTROL_READ | ACCESS_CLIENT,
-      (void *)&zclSampleSw_clusterRevision_all
+      (void *)&zclZigIt_clusterRevision_all
     }
   },
   // *** Groups Cluster *** //
@@ -275,47 +275,47 @@ CONST zclAttrRec_t zclSampleSw_Attrs[] =
       ATTRID_CLUSTER_REVISION,
       ZCL_DATATYPE_UINT16,
       ACCESS_CONTROL_READ | ACCESS_CLIENT,
-      (void *)&zclSampleSw_clusterRevision_all
+      (void *)&zclZigIt_clusterRevision_all
     }
   }
 };
 
-uint8 CONST zclSampleSw_NumAttributes = ( sizeof(zclSampleSw_Attrs) / sizeof(zclSampleSw_Attrs[0]) );
+uint8 CONST zclZigIt_NumAttributes = ( sizeof(zclZigIt_Attrs) / sizeof(zclZigIt_Attrs[0]) );
 
 /*********************************************************************
  * SIMPLE DESCRIPTOR
  */
 // This is the Cluster ID List and should be filled with Application
 // specific cluster IDs.
-const cId_t zclSampleSw_InClusterList[] =
+const cId_t zclZigIt_InClusterList[] =
 {
   ZCL_CLUSTER_ID_GEN_BASIC,
   ZCL_CLUSTER_ID_GEN_IDENTIFY,
   ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG
 };
 
-#define ZCLSAMPLESW_MAX_INCLUSTERS    ( sizeof( zclSampleSw_InClusterList ) / sizeof( zclSampleSw_InClusterList[0] ))
+#define zclZigIt_MAX_INCLUSTERS    ( sizeof( zclZigIt_InClusterList ) / sizeof( zclZigIt_InClusterList[0] ))
 
-const cId_t zclSampleSw_OutClusterList[] =
+const cId_t zclZigIt_OutClusterList[] =
 {
   ZCL_CLUSTER_ID_GEN_IDENTIFY,
   ZCL_CLUSTER_ID_GEN_ON_OFF,
   ZCL_CLUSTER_ID_GEN_GROUPS,
 };
 
-#define ZCLSAMPLESW_MAX_OUTCLUSTERS   ( sizeof( zclSampleSw_OutClusterList ) / sizeof( zclSampleSw_OutClusterList[0] ))
+#define zclZigIt_MAX_OUTCLUSTERS   ( sizeof( zclZigIt_OutClusterList ) / sizeof( zclZigIt_OutClusterList[0] ))
 
-SimpleDescriptionFormat_t zclSampleSw_SimpleDesc =
+SimpleDescriptionFormat_t zclZigIt_SimpleDesc =
 {
   SAMPLESW_ENDPOINT,                  //  int Endpoint;
   ZCL_HA_PROFILE_ID,                  //  uint16 AppProfId[2];
   ZCL_HA_DEVICEID_ON_OFF_LIGHT_SWITCH,//  uint16 AppDeviceId[2];
   SAMPLESW_DEVICE_VERSION,            //  int   AppDevVer:4;
   SAMPLESW_FLAGS,                     //  int   AppFlags:4;
-  ZCLSAMPLESW_MAX_INCLUSTERS,         //  byte  AppNumInClusters;
-  (cId_t *)zclSampleSw_InClusterList, //  byte *pAppInClusterList;
-  ZCLSAMPLESW_MAX_OUTCLUSTERS,        //  byte  AppNumInClusters;
-  (cId_t *)zclSampleSw_OutClusterList //  byte *pAppInClusterList;
+  zclZigIt_MAX_INCLUSTERS,         //  byte  AppNumInClusters;
+  (cId_t *)zclZigIt_InClusterList, //  byte *pAppInClusterList;
+  zclZigIt_MAX_OUTCLUSTERS,        //  byte  AppNumInClusters;
+  (cId_t *)zclZigIt_OutClusterList //  byte *pAppInClusterList;
 };
 
 /*********************************************************************
@@ -341,7 +341,7 @@ static void zclSampleLight_OnOffCB( uint8 cmd )
 
   uint8 OnOff;
 
-  //zclSampleSw_DstAddr.addr.shortAddr = pPtr->srcAddr.addr.shortAddr;
+  //zclZigIt_DstAddr.addr.shortAddr = pPtr->srcAddr.addr.shortAddr;
 
   // Turn on the light
   if ( cmd == COMMAND_ON )
@@ -356,7 +356,7 @@ static void zclSampleLight_OnOffCB( uint8 cmd )
   // Toggle the light
   else if ( cmd == COMMAND_TOGGLE )
   {
-    if (zclSampleSw_OnOff == LIGHT_ON)
+    if (zclZigIt_OnOff == LIGHT_ON)
     {
       OnOff = LIGHT_OFF;
     }
@@ -366,8 +366,8 @@ static void zclSampleLight_OnOffCB( uint8 cmd )
     }
   }
 
-  zclSampleSw_OnOff = OnOff;
-  //zclSampleSw_UpdateLedState();
+  zclZigIt_OnOff = OnOff;
+  //zclZigIt_UpdateLedState();
   
   // update the display
   //UI_UpdateLcd( );
@@ -383,22 +383,22 @@ static void zclSampleLight_OnOffCB( uint8 cmd )
  *
  * @return  none
  */
-void zclSampleSw_ResetAttributesToDefaultValues(void)
+void zclZigIt_ResetAttributesToDefaultValues(void)
 {
   int i;
   
-  zclSampleSw_LocationDescription[0] = 16;
+  zclZigIt_LocationDescription[0] = 16;
   for (i = 1; i <= 16; i++)
   {
-    zclSampleSw_LocationDescription[i] = ' ';
+    zclZigIt_LocationDescription[i] = ' ';
   }
   
-  zclSampleSw_PhysicalEnvironment = DEFAULT_PHYSICAL_ENVIRONMENT;
-  zclSampleSw_DeviceEnable = DEFAULT_DEVICE_ENABLE_STATE;
+  zclZigIt_PhysicalEnvironment = DEFAULT_PHYSICAL_ENVIRONMENT;
+  zclZigIt_DeviceEnable = DEFAULT_DEVICE_ENABLE_STATE;
   
-  zclSampleSw_IdentifyTime = DEFAULT_IDENTIFY_TIME;
+  zclZigIt_IdentifyTime = DEFAULT_IDENTIFY_TIME;
   
-  zclSampleSw_OnOffSwitchActions = ON_OFF_SWITCH_ACTIONS_TOGGLE; //note that the default specified by the zcl spec is ON_OFF_SWITCH_ACTIONS_ON, but for backward compatibility with TI's legacy sample-switch, we use here ON_OFF_SWITCH_ACTIONS_TOGGLE
+  zclZigIt_OnOffSwitchActions = ON_OFF_SWITCH_ACTIONS_TOGGLE; //note that the default specified by the zcl spec is ON_OFF_SWITCH_ACTIONS_ON, but for backward compatibility with TI's legacy sample-switch, we use here ON_OFF_SWITCH_ACTIONS_TOGGLE
 }
 
 /****************************************************************************
